@@ -1,0 +1,352 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Abdullah Khan — AI Engineer & Full-Stack Developer</title>
+  <meta name="description" content="Portfolio of Abdullah Khan, BS Artificial Intelligence student at IST University Islamabad." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <header class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="#top" class="logo">&gt;AK<span class="cursor">_</span></a>
+      <nav class="nav-links" id="navLinks">
+        <a href="#about">about</a>
+        <a href="#skills">skills</a>
+        <a href="#projects">projects</a>
+        <a href="#education">education</a>
+        <a href="#certifications">credentials</a>
+        <a href="#contact">contact</a>
+      </nav>
+      <a href="#contact" class="btn btn-ghost nav-cta">say hi</a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section id="top" class="hero">
+      <div class="hero-grid-bg" aria-hidden="true"></div>
+      <div class="hero-inner">
+        <div class="hero-text" data-reveal="up">
+          <p class="mono accent-cyan terminal-line">// root@abdullah:~$ whoami</p>
+          <h1>Abdullah Khan</h1>
+          <p class="hero-tagline">
+            <span class="role-cycler mono" id="roleCycler">AI Engineer</span>
+          </p>
+          <p class="hero-desc">
+            BS Artificial Intelligence @ IST University Islamabad. I engineer full-stack
+            architectures and relational database pipelines—ranging from interactive web platforms to complete hostel monitoring systems backed by advanced logic paradigms.
+          </p>
+          <div class="hero-actions">
+            <a href="#projects" class="btn btn-primary">View Projects <span class="arrow">→</span></a>
+            <a href="https://github.com/abbdulla037-design" target="_blank" rel="noopener" class="btn btn-outline">GitHub Profile</a>
+          </div>
+        </div>
+        <div class="hero-image-container" data-reveal="scale">
+          <div class="profile-glow-effect"></div>
+          <div class="image-border-shield">
+            <img src="images/profile.jpg.jpeg" alt="Abdullah Khan" class="profile-photo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="profile-fallback-avatar" style="display: none;"><span class="mono">&lt;AK /&gt;</span></div>
+          </div>
+
+          <div class="robot-mascot" id="robotMascot" tabindex="0" aria-label="AI assistant mascot">
+            <div class="robot-tooltip mono">system online<span class="robot-tooltip-caret"></span></div>
+            <div class="robot-badge-glow"></div>
+            <svg viewBox="0 0 100 100" width="108" height="108" class="robot-svg">
+              <defs>
+                <linearGradient id="botGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#2dd4ee"/>
+                  <stop offset="100%" stop-color="#8b7cf6"/>
+                </linearGradient>
+                <radialGradient id="botScreen" cx="50%" cy="40%" r="70%">
+                  <stop offset="0%" stop-color="#16233e"/>
+                  <stop offset="100%" stop-color="#0a0e1a"/>
+                </radialGradient>
+                <radialGradient id="badgeGrad" cx="50%" cy="50%" r="50%">
+                  <stop offset="0%" stop-color="#141b30"/>
+                  <stop offset="100%" stop-color="#0b0f1c"/>
+                </radialGradient>
+              </defs>
+
+              <!-- backing plate -->
+              <circle cx="50" cy="52" r="46" fill="url(#badgeGrad)" stroke="url(#botGrad)" stroke-width="1.4" stroke-opacity="0.45"/>
+              <circle cx="50" cy="52" r="46" fill="none" stroke="url(#botGrad)" stroke-width="0.6" stroke-opacity="0.25" stroke-dasharray="2 4"/>
+
+              <!-- antenna -->
+              <line x1="50" y1="16" x2="50" y2="25" stroke="url(#botGrad)" stroke-width="2.5" stroke-linecap="round"/>
+              <circle class="robot-antenna-light" cx="50" cy="13.5" r="4" fill="url(#botGrad)"/>
+
+              <!-- back arm (static stub, behind body) -->
+              <line x1="32" y1="72" x2="20" y2="78" stroke="url(#botGrad)" stroke-width="4" stroke-linecap="round" opacity="0.85"/>
+
+              <!-- ears -->
+              <rect x="19" y="38" width="6" height="15" rx="3" fill="url(#botGrad)" opacity="0.85"/>
+              <rect x="75" y="38" width="6" height="15" rx="3" fill="url(#botGrad)" opacity="0.85"/>
+
+              <!-- head -->
+              <rect x="26" y="24" width="48" height="38" rx="15" fill="#0f1526" stroke="url(#botGrad)" stroke-width="2.2"/>
+              <!-- screen / visor -->
+              <rect x="33" y="32" width="34" height="20" rx="10" fill="url(#botScreen)" stroke="url(#botGrad)" stroke-width="1" stroke-opacity="0.4"/>
+              <!-- eyes as glowing bars -->
+              <g class="robot-eyes">
+                <rect x="39" y="39" width="6" height="7" rx="3" fill="url(#botGrad)"/>
+                <rect x="55" y="39" width="6" height="7" rx="3" fill="url(#botGrad)"/>
+              </g>
+
+              <!-- body -->
+              <rect x="34" y="66" width="32" height="18" rx="8" fill="#0f1526" stroke="url(#botGrad)" stroke-width="2.2"/>
+              <!-- core -->
+              <rect class="robot-core" x="46" y="71.5" width="8" height="8" rx="2" fill="url(#botGrad)" transform="rotate(45 50 75.5)"/>
+
+              <!-- waving arm (front, animated) -->
+              <g class="robot-arm">
+                <line x1="66" y1="72" x2="82" y2="62" stroke="url(#botGrad)" stroke-width="4" stroke-linecap="round"/>
+                <circle cx="82" cy="62" r="2.6" fill="url(#botGrad)"/>
+              </g>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <div class="section-inner section-grid">
+        <div class="section-label-pane" data-reveal="left"><span class="mono label-tag">PROFILE</span></div>
+        <div class="section-content" data-reveal="up">
+          <h2>Engineering Intent</h2>
+          <p>
+            I'm a first-year AI student focused on learning computational engineering concepts by actively shipping functional products. That habit turned Database Systems concepts into an end-to-end hostel administration engine built with automated triggers and customized logic procedures.
+          </p>
+          <div class="about-facts">
+            <div class="fact" data-reveal="up">
+              <span class="fact-icon">🎓</span>
+              <div>
+                <p class="fact-title">BS Artificial Intelligence</p>
+                <p class="fact-sub">IST University, Islamabad</p>
+              </div>
+            </div>
+            <div class="fact" data-reveal="up">
+              <span class="fact-icon">📍</span>
+              <div>
+                <p class="fact-title">Location</p>
+                <p class="fact-sub">Islamabad / Rawalpindi, Pakistan</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="section section-alt">
+      <div class="section-inner section-grid">
+        <div class="section-label-pane" data-reveal="left"><span class="mono label-tag">EXPERTISE</span></div>
+        <div class="section-content" data-reveal="up">
+          <h2>Technical Architecture</h2>
+          <div class="skills-wrapper-grid">
+            <div class="skills-metrics-column">
+              <p class="mono skill-label accent-cyan">Core Languages &amp; Competency</p>
+              
+              <div class="proficiency-unit">
+                <div class="proficiency-header"><span class="skill-name">C++</span><span class="skill-percent mono">90%</span></div>
+                <div class="progress-track"><div class="progress-fill" style="width: 90%"></div></div>
+              </div>
+
+              <div class="proficiency-unit">
+                <div class="proficiency-header"><span class="skill-name">HTML5 &amp; CSS3</span><span class="skill-percent mono">90%</span></div>
+                <div class="progress-track"><div class="progress-fill" style="width: 90%"></div></div>
+              </div>
+
+              <div class="proficiency-unit">
+                <div class="proficiency-header"><span class="skill-name">JavaScript</span><span class="skill-percent mono">65%</span></div>
+                <div class="progress-track"><div class="progress-fill" style="width: 65%"></div></div>
+              </div>
+
+              <div class="proficiency-unit">
+                <div class="proficiency-header"><span class="skill-name">SQL / Relational Queries</span><span class="skill-percent mono">90%</span></div>
+                <div class="progress-track"><div class="progress-fill" style="width: 90%"></div></div>
+              </div>
+            </div>
+
+            <div class="frameworks-display-column">
+              <p class="mono skill-label accent-cyan">Frameworks, IDEs &amp; Tools</p>
+              <div class="frameworks-token-grid">
+                <div class="token-card"><p class="token-title">GitHub &amp; Git</p><p class="token-desc">Version Control Systems</p></div>
+                <div class="token-card"><p class="token-title">Flutter</p><p class="token-desc">Cross-Platform Development</p></div>
+                <div class="token-card"><p class="token-title">SQL Server (MSSQL)</p><p class="token-desc">Enterprise Database Infrastructure</p></div>
+                <div class="token-card"><p class="token-title">SQL Server Management Studio (SSMS)</p><p class="token-desc">Query Optimization &amp; Management</p></div>
+                <div class="token-card"><p class="token-title">MongoDB</p><p class="token-desc">NoSQL Document Management</p></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="section">
+      <div class="section-inner section-grid">
+        <div class="section-label-pane" data-reveal="left"><span class="mono label-tag">PORTFOLIO</span></div>
+        <div class="section-content" data-reveal="up">
+          <h2>Selected Engineering Repositories</h2>
+
+          <article class="project-card project-flagship" data-reveal="up">
+            <div class="carousel-container">
+              <div class="carousel-viewport" id="projectCarousel">
+                <div class="carousel-slide"><img src="images/hmsimg1.png" alt="Hostel Management Screen Preview" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'800\' height=\'450\' style=\'fill:%23111827\'><rect width=\'100%\' height=\'100%\'/><text x=\'50%\' y=\'50%\' font-family=\'sans-serif\' font-size=\'20\' fill=\'%238B95A7\' text-anchor=\'middle\'>Hostel Engine — Admin Controls Snapshot Placeholder</text></svg>'"></div>
+                <div class="carousel-slide"><img src="images/hmsimg2.png" alt="SQL Database System Triggers Layout" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'800\' height=\'450\' style=\'fill:%23111827\'><rect width=\'100%\' height=\'100%\'/><text x=\'50%\' y=\'50%\' font-family=\'sans-serif\' font-size=\'20\' fill=\'%238B95A7\' text-anchor=\'middle\'>SSMS Query Execution &amp; Relational Schema View</text></svg>'"></div>
+                <div class="carousel-slide"><img src="images/hmsimg3.png" alt="SQL Database System Triggers Layout" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'800\' height=\'450\' style=\'fill:%23111827\'><rect width=\'100%\' height=\'100%\'/><text x=\'50%\' y=\'50%\' font-family=\'sans-serif\' font-size=\'20\' fill=\'%238B95A7\' text-anchor=\'middle\'>SSMS Query Execution &amp; Relational Schema View</text></svg>'"></div>
+                <div class="carousel-slide"><img src="images/hmsimg4.png" alt="Hostel Management System Additional View" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'800\' height=\'450\' style=\'fill:%23111827\'><rect width=\'100%\' height=\'100%\'/><text x=\'50%\' y=\'50%\' font-family=\'sans-serif\' font-size=\'20\' fill=\'%238B95A7\' text-anchor=\'middle\'>Hostel Engine — System View</text></svg>'"></div>
+              </div>
+              <button class="carousel-btn btn-prev" id="prevBtn" aria-label="Previous image">‹</button>
+              <button class="carousel-btn btn-next" id="nextBtn" aria-label="Next image">›</button>
+              <div class="carousel-indicators" id="carouselIndicators"></div>
+            </div>
+
+            <div class="project-body">
+              <span class="mono tag-flagship">FLAGSHIP CORE ARCHITECTURE</span>
+              <h3>Smart Hostel Management System</h3>
+              <p class="project-desc">
+                A full 3-tier database systems deployment: engineered a Node.js/Express REST API talking directly to SQL Server database systems on the backend, styled with an interactive, clean management console interface layout.
+              </p>
+              <div class="project-tags"><span>Node.js</span><span>Express</span><span>SQL Server</span><span>SSMS</span><span>Stored Procedures</span></div>
+              <a href="https://github.com/abbdulla037-design/hostel-management-system" target="_blank" rel="noopener" class="link-arrow">Open Repository Workspace →</a>
+            </div>
+          </article>
+
+          <div class="project-secondary-grid">
+            <article class="project-card" data-reveal="up">
+              <div class="iframe-wrap">
+                <iframe src="https://abbdulla037-design.github.io/Sizzle-Street/" title="Sizzle Street Live View" loading="lazy"></iframe>
+                <a class="iframe-overlay-link" href="https://abbdulla037-design.github.io/Sizzle-Street/" target="_blank" rel="noopener">Launch Live Site ↗</a>
+              </div>
+              <div class="project-body">
+                <span class="mono tag-flagship">BRAND + WEB RUNTIME</span>
+                <h3>Sizzle Street</h3>
+                <p class="project-desc">A premium responsive food brand menu catalog built using structural HTML elements and fully customized fluid CSS layout styling rules.</p>
+                <div class="project-tags"><span>HTML5</span><span>CSS3 Grid</span><span>Production Hosting</span></div>
+                <div class="project-links"><a href="https://github.com/abbdulla037-design/Sizzle-Street" target="_blank" rel="noopener">Repository Workspace</a></div>
+              </div>
+            </article>
+
+            <article class="project-card" data-reveal="up">
+              <div class="iframe-wrap">
+                <iframe src="https://abbdulla037-design.github.io/ICT-project/" title="ICT Project Live View" loading="lazy"></iframe>
+                <a class="iframe-overlay-link" href="https://abbdulla037-design.github.io/ICT-project/" target="_blank" rel="noopener">Launch Live Site ↗</a>
+              </div>
+              <div class="project-body">
+                <span class="mono tag-flagship">ACADEMIC INTERACTION HUB</span>
+                <h3>iPhone Comparison Hub</h3>
+                <p class="project-desc">An exploratory catalog platform tracking comparative metrics across smartphone hardware generations, built to support core collaborative labs.</p>
+                <div class="project-tags"><span>Semantic HTML</span><span>CSS Selectors</span><span>Shared Deployment</span></div>
+                <div class="project-links"><a href="https://github.com/abbdulla037-design/ICT-project" target="_blank" rel="noopener">Repository Workspace</a></div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="education" class="section section-alt">
+      <div class="section-inner section-grid">
+        <div class="section-label-pane" data-reveal="left"><span class="mono label-tag">ACADEMICS</span></div>
+        <div class="section-content" data-reveal="up">
+          <h2>Degree Engineering Milestone</h2>
+          <div class="education-timeline">
+            <div class="timeline-block" data-reveal="up">
+              <div class="timeline-dot"></div>
+              <div class="timeline-header">
+                <h3>BS Artificial Intelligence</h3>
+                <span class="timeline-date mono">Currently Active Enrolment</span>
+              </div>
+              <p class="timeline-institution accent-cyan">IST University, Islamabad</p>
+              <p class="timeline-text">
+                Focusing on computation tracks, discrete algorithmic models, hardware architecture, and deep logical frameworks constructed for backend processing systems.
+              </p>
+              <p class="mono course-list-label">Track Core Coursework Focus:</p>
+              <div class="coursework-badges">
+                <span>Programming Fundamentals</span>
+                <span>Object-Oriented Programming (OOP)</span>
+                <span>Database Systems (DBS)</span>
+                <span>Digital Logic Design (DLD)</span>
+                <span>ICT (Information &amp; Communication Tech)</span>
+                <span>Discrete Structures</span>
+                <span>Calculus &amp; Analytical Geometry</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="certifications" class="section">
+      <div class="section-inner section-grid">
+        <div class="section-label-pane" data-reveal="left"><span class="mono label-tag">Additional Certifications</span></div>
+        <div class="section-content" data-reveal="up">
+          <h2>Professional Credentials &amp; Certifications</h2>
+          <p class="section-subtitle-text">Industry authorizations, technical achievements, and extra milestones earned throughout my university degree timeline.</p>
+          
+          <div class="certifications-matrix-grid">
+            
+            <div class="cert-card-premium" data-reveal="up">
+              <div class="cert-image-frame">
+                <img src="F:\My Portfolio\My Portfolio\images\cert2.jpeg" alt="Technical Certification Achievement" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <div class="cert-image-fallback mono">&lt; VERIFIED PATH /&gt;</div>
+              </div>
+              <div class="cert-premium-body">
+                <h4>Certificate of Participation in Master Code Contest</h4>
+                <p class="cert-premium-issuer">Organized By Artificial Intelligence Community Pakistan</p>
+                <p class="cert-premium-meta mono">Issued:February 2026 ·  Registeration ID: #250901007</p>
+              </div>
+            </div>
+
+            <div class="cert-card-premium" data-reveal="up">
+              <div class="cert-image-frame">
+                <img src="F:\My Portfolio\My Portfolio\images\certificate1.png" alt="Technical Certification Achievement" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <div class="cert-image-fallback mono">&lt; VERIFIED PATH /&gt;</div>
+              </div>
+              <div class="cert-premium-body">
+                <h4>Certificate of Thorough Introduction to Artificial Intelligence </h4>
+                <p class="cert-premium-issuer">Simplilearn Skillup Program</p>
+                <p class="cert-premium-meta mono">Issued: March 2026 ·</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section section-alt">
+      <div class="section-inner section-grid">
+        <div class="section-label-pane" data-reveal="left"><span class="mono label-tag">CONNECT</span></div>
+        <div class="section-content" data-reveal="up">
+          <h2>Available for Technical Internships</h2>
+          <p class="contact-desc">My workspace pipelines remain operational. Let's collaborate on data optimization or full-stack application development workflows.</p>
+          <div class="hero-actions">
+            <a href="mailto:abbdulla038@gmail.com" class="btn btn-primary">Email Workspace</a>
+            <a href="https://github.com/abbdulla037-design" target="_blank" rel="noopener" class="btn btn-outline">GitHub Workspace</a>
+            <a href="https://www.linkedin.com/in/abdullah-khan-013862386/" target="_blank" rel="noopener" class="btn btn-outline">LinkedIn Connect</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner mono">
+      <p>© 2026 Abdullah Khan. All engineering rights reserved.</p>
+      <p>System Engine Framework: Pure HTML, CSS &amp; JS Asset</p>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
