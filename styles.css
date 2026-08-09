@@ -392,6 +392,7 @@ a { color: inherit; text-decoration: none; }
 }
 .project-card:hover { border-color: rgba(45, 212, 238, 0.25); box-shadow: 0 16px 40px rgba(0,0,0,0.35); }
 .carousel-container { position: relative; width: 100%; aspect-ratio: 16 / 9; overflow: hidden; background: #05070d; border-bottom: 1px solid var(--line); }
+.carousel-container--portrait { aspect-ratio: 9 / 13; max-height: 640px; }
 .carousel-viewport { display: flex; width: 100%; height: 100%; transition: transform 0.5s var(--ease); }
 .carousel-slide { min-width: 100%; height: 100%; width: 100%; }
 .carousel-slide img { width: 100%; height: 100%; object-fit: contain; background: #05070d; opacity: 0.97; }
