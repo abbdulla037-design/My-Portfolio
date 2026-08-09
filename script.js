@@ -175,14 +175,18 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ---------------------------------------------------------------
-  // Multi-Image Project Scroller Engine
+  // Multi-Image Project Scroller Engine (supports multiple carousels)
   // ---------------------------------------------------------------
-  const carousel = document.getElementById('projectCarousel');
-  const prevBtn = document.getElementById('prevBtn');
-  const nextBtn = document.getElementById('nextBtn');
-  const indicatorsContainer = document.getElementById('carouselIndicators');
+  const allCarousels = document.querySelectorAll('.carousel-container');
 
-  if (carousel && indicatorsContainer) {
+  allCarousels.forEach(container => {
+    const carousel = container.querySelector('.carousel-viewport');
+    const prevBtn = container.querySelector('.btn-prev');
+    const nextBtn = container.querySelector('.btn-next');
+    const indicatorsContainer = container.querySelector('.carousel-indicators');
+
+    if (!carousel || !indicatorsContainer) return;
+
     const slides = carousel.querySelectorAll('.carousel-slide');
     let currentIndex = 0;
     let autoplayTimer = null;
@@ -230,5 +234,5 @@ document.addEventListener('DOMContentLoaded', () => {
     if (prevBtn) prevBtn.addEventListener('click', () => { prevSlide(); resetAutoplay(); });
 
     resetAutoplay();
-  }
+  });
 });
