@@ -1,3 +1,18 @@
+// Always land on top for a fresh visit — stops mobile browsers from
+// restoring a remembered scroll position (e.g. from a previous session
+// or bfcache restore) and landing mid-page.
+if ('scrollRestoration' in history) {
+  history.scrollRestoration = 'manual';
+}
+if (!window.location.hash) {
+  window.scrollTo(0, 0);
+}
+window.addEventListener('pageshow', (e) => {
+  if (!window.location.hash) {
+    window.scrollTo(0, 0);
+  }
+});
+
 document.addEventListener('DOMContentLoaded', () => {
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
