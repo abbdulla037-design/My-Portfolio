@@ -235,4 +235,44 @@ document.addEventListener('DOMContentLoaded', () => {
 
     resetAutoplay();
   });
+
+  // ---------------------------------------------------------------
+  // Subtle 3D Tilt on Flagship / Project Cards
+  // ---------------------------------------------------------------
+  const tiltCards = document.querySelectorAll('.project-card.tilt');
+
+  if (tiltCards.length && !reduceMotion) {
+    tiltCards.forEach(card => {
+      card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        const px = (e.clientX - rect.left) / rect.width - 0.5;
+        const py = (e.clientY - rect.top) / rect.height - 0.5;
+        const rotateX = (-py * 3.5).toFixed(2);
+        const rotateY = (px * 3.5).toFixed(2);
+        card.style.transform = `perspective(900px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-3px)`;
+      });
+      card.addEventListener('mouseleave', () => {
+        card.style.transform = '';
+      });
+    });
+  }
+
+  // ---------------------------------------------------------------
+  // Magnetic Pull on Primary Buttons
+  // ---------------------------------------------------------------
+  const magneticBtns = document.querySelectorAll('.btn-primary, .btn-outline');
+
+  if (magneticBtns.length && !reduceMotion) {
+    magneticBtns.forEach(btn => {
+      btn.addEventListener('mousemove', (e) => {
+        const rect = btn.getBoundingClientRect();
+        const x = (e.clientX - rect.left - rect.width / 2) * 0.25;
+        const y = (e.clientY - rect.top - rect.height / 2) * 0.35;
+        btn.style.transform = `translate(${x}px, ${y}px)`;
+      });
+      btn.addEventListener('mouseleave', () => {
+        btn.style.transform = '';
+      });
+    });
+  }
 });
