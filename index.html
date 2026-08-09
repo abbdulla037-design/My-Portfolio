@@ -66,44 +66,66 @@
             <div class="robot-badge-glow"></div>
             <svg viewBox="0 0 100 100" width="108" height="108" class="robot-svg">
               <defs>
-                <linearGradient id="botGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <linearGradient id="botGrad" class="robot-grad-shift" x1="0%" y1="0%" x2="100%" y2="100%">
                   <stop offset="0%" stop-color="#2951e3"/>
+                  <stop offset="50%" stop-color="#5a6ef0"/>
                   <stop offset="100%" stop-color="#0e9c8c"/>
                 </linearGradient>
-                <radialGradient id="botScreen" cx="50%" cy="40%" r="70%">
-                  <stop offset="0%" stop-color="#1c2547"/>
+                <linearGradient id="botGradSoft" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#5a6ef0"/>
+                  <stop offset="100%" stop-color="#1fbcae"/>
+                </linearGradient>
+                <radialGradient id="botScreen" cx="50%" cy="38%" r="75%">
+                  <stop offset="0%" stop-color="#242f5c"/>
                   <stop offset="100%" stop-color="#10152c"/>
                 </radialGradient>
-                <radialGradient id="badgeGrad" cx="50%" cy="50%" r="50%">
-                  <stop offset="0%" stop-color="#1c2547"/>
+                <radialGradient id="badgeGrad" cx="50%" cy="42%" r="60%">
+                  <stop offset="0%" stop-color="#232d54"/>
                   <stop offset="100%" stop-color="#10152c"/>
                 </radialGradient>
               </defs>
 
-              <circle cx="50" cy="52" r="46" fill="url(#badgeGrad)" stroke="url(#botGrad)" stroke-width="1.4" stroke-opacity="0.6"/>
-              <circle cx="50" cy="52" r="46" fill="none" stroke="url(#botGrad)" stroke-width="0.6" stroke-opacity="0.35" stroke-dasharray="2 4"/>
+              <!-- badge plate -->
+              <circle cx="50" cy="52" r="46" fill="url(#badgeGrad)" stroke="url(#botGrad)" stroke-width="1.4" stroke-opacity="0.65"/>
+              <circle cx="50" cy="52" r="46" fill="none" stroke="url(#botGradSoft)" stroke-width="0.6" stroke-opacity="0.4" stroke-dasharray="2 4"/>
 
-              <line x1="50" y1="16" x2="50" y2="25" stroke="url(#botGrad)" stroke-width="2.5" stroke-linecap="round"/>
-              <circle class="robot-antenna-light" cx="50" cy="13.5" r="4" fill="url(#botGrad)"/>
+              <!-- antenna -->
+              <line x1="50" y1="14" x2="50" y2="24" stroke="url(#botGrad)" stroke-width="2.5" stroke-linecap="round"/>
+              <circle class="robot-antenna-light" cx="50" cy="11.5" r="4.5" fill="url(#botGrad)"/>
 
-              <line x1="32" y1="72" x2="20" y2="78" stroke="url(#botGrad)" stroke-width="4" stroke-linecap="round" opacity="0.85"/>
+              <!-- back arm stub -->
+              <path d="M31 71 Q22 74 18 80" stroke="url(#botGrad)" stroke-width="4" stroke-linecap="round" fill="none" opacity="0.85"/>
 
-              <rect x="19" y="38" width="6" height="15" rx="3" fill="url(#botGrad)" opacity="0.85"/>
-              <rect x="75" y="38" width="6" height="15" rx="3" fill="url(#botGrad)" opacity="0.85"/>
+              <!-- rounded ears -->
+              <rect x="17" y="36" width="7" height="17" rx="3.5" fill="url(#botGrad)" opacity="0.9"/>
+              <rect x="76" y="36" width="7" height="17" rx="3.5" fill="url(#botGrad)" opacity="0.9"/>
 
-              <rect x="26" y="24" width="48" height="38" rx="15" fill="#161e3c" stroke="url(#botGrad)" stroke-width="2.2"/>
-              <rect x="33" y="32" width="34" height="20" rx="10" fill="url(#botScreen)" stroke="url(#botGrad)" stroke-width="1" stroke-opacity="0.5"/>
+              <!-- head: softer, rounder silhouette -->
+              <path d="M25 40 Q25 21 50 21 Q75 21 75 40 L75 48 Q75 64 50 64 Q25 64 25 48 Z"
+                    fill="#161e3c" stroke="url(#botGrad)" stroke-width="2.2"/>
+
+              <!-- visor / screen -->
+              <path d="M32 38 Q32 30 50 30 Q68 30 68 38 L68 43 Q68 52 50 52 Q32 52 32 43 Z"
+                    fill="url(#botScreen)" stroke="url(#botGradSoft)" stroke-width="1" stroke-opacity="0.55"/>
+
+              <!-- expressive eyes -->
               <g class="robot-eyes">
-                <rect x="39" y="39" width="6" height="7" rx="3" fill="url(#botGrad)"/>
-                <rect x="55" y="39" width="6" height="7" rx="3" fill="url(#botGrad)"/>
+                <rect x="39" y="38" width="6.5" height="8" rx="3.25" fill="url(#botGrad)"/>
+                <rect x="54.5" y="38" width="6.5" height="8" rx="3.25" fill="url(#botGrad)"/>
               </g>
+              <!-- small smile -->
+              <path class="robot-smile" d="M43 47 Q50 51 57 47" stroke="url(#botGradSoft)" stroke-width="1.6" stroke-linecap="round" fill="none" opacity="0.85"/>
 
-              <rect x="34" y="66" width="32" height="18" rx="8" fill="#161e3c" stroke="url(#botGrad)" stroke-width="2.2"/>
-              <rect class="robot-core" x="46" y="71.5" width="8" height="8" rx="2" fill="url(#botGrad)" transform="rotate(45 50 75.5)"/>
+              <!-- rounded body -->
+              <path d="M33 68 Q33 66 36 66 L64 66 Q67 66 67 68 L67 80 Q67 86 58 86 L42 86 Q33 86 33 80 Z"
+                    fill="#161e3c" stroke="url(#botGrad)" stroke-width="2.2"/>
+              <!-- glowing core, softly rounded diamond -->
+              <rect class="robot-core" x="45.5" y="71.5" width="9" height="9" rx="2.5" fill="url(#botGradSoft)" transform="rotate(45 50 76)"/>
 
+              <!-- waving arm -->
               <g class="robot-arm">
-                <line x1="66" y1="72" x2="82" y2="62" stroke="url(#botGrad)" stroke-width="4" stroke-linecap="round"/>
-                <circle cx="82" cy="62" r="2.6" fill="url(#botGrad)"/>
+                <path d="M65 71 Q75 66 81 58" stroke="url(#botGrad)" stroke-width="4.2" stroke-linecap="round" fill="none"/>
+                <circle cx="81" cy="58" r="3" fill="url(#botGradSoft)"/>
               </g>
             </svg>
           </div>
@@ -135,13 +157,6 @@
               <div>
                 <p class="fact-title">Location</p>
                 <p class="fact-sub">Islamabad / Rawalpindi, Pakistan</p>
-              </div>
-            </div>
-            <div class="fact" data-reveal="up">
-              <span class="fact-icon">🧬</span>
-              <div>
-                <p class="fact-title">Afrium Member</p>
-                <p class="fact-sub">Pakistan's first undergrad AI research org</p>
               </div>
             </div>
           </div>
@@ -291,7 +306,8 @@
                 A full-stack ride-hailing app built for a small city that doesn't typically have ride-hailing coverage, designed to scale — inspired by InDrive, with live fare negotiation, real-time chat, and a driver wallet system with automated commission tracking.
               </p>
               <div class="project-tags"><span>Flutter</span><span>Node.js</span><span>Express</span><span>MongoDB</span><span>Socket.io</span><span>Firebase FCM</span><span>JWT</span></div>
-              <span class="mono" style="color: var(--ink-mute); font-size: 12px;">Source code private — contact for collaboration or licensing</span>
+              <a href="https://github.com/abbdulla037-design/Rydee_App_Portfolio" target="_blank" rel="noopener" class="link-arrow">Open Repository Workspace →</a>
+              <span class="mono" style="color: var(--ink-mute); font-size: 12px; display: block; margin-top: 10px;">Source code private — contact for collaboration or licensing</span>
             </div>
           </article>
         </div>
