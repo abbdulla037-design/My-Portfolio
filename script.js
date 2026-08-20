@@ -31,22 +31,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ---------------------------------------------------------------
-  // Mobile Navigation Drawer Toggle
-  // ---------------------------------------------------------------
-  const nav = document.getElementById('nav');
-  const menuToggle = document.getElementById('menuToggle');
-  const navLinks = document.getElementById('navLinks');
-
-  if (menuToggle && nav) {
-    menuToggle.addEventListener('click', () => nav.classList.toggle('open'));
-  }
-  if (navLinks) {
-    navLinks.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => nav.classList.remove('open'));
-    });
-  }
-
-  // ---------------------------------------------------------------
   // Scroll Progress Bar
   // ---------------------------------------------------------------
   const scrollProgress = document.getElementById('scrollProgress');
@@ -61,24 +45,69 @@ document.addEventListener('DOMContentLoaded', () => {
   updateScrollProgress();
 
   // ---------------------------------------------------------------
-  // Active Nav Link Tracking (highlights current section)
+  // Active Section Tracking — drives .current on the liquid dock
+  // (desktop) and liquid bubble stack (mobile) items
   // ---------------------------------------------------------------
   const sections = document.querySelectorAll('main section[id]');
-  const navAnchors = navLinks ? navLinks.querySelectorAll('a') : [];
+  const liquidNavItems = document.querySelectorAll('.dock-item[data-key], .mln-item[data-key]');
 
-  if (sections.length && navAnchors.length && 'IntersectionObserver' in window) {
+  if (sections.length && liquidNavItems.length && 'IntersectionObserver' in window) {
     const navObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           const id = entry.target.getAttribute('id');
-          navAnchors.forEach(a => {
-            a.classList.toggle('active', a.getAttribute('href') === '#' + id);
+          liquidNavItems.forEach(item => {
+            item.classList.toggle('current', item.dataset.key === id);
           });
         }
       });
     }, { rootMargin: '-45% 0px -50% 0px', threshold: 0 });
 
     sections.forEach(sec => navObserver.observe(sec));
+  }
+
+  // ---------------------------------------------------------------
+  // Liquid Mobile Navigation — expanding bubble stack
+  // ---------------------------------------------------------------
+  const liquidMobile = document.getElementById('liquidMobile');
+  const mlnToggle = document.getElementById('mlnToggle');
+
+  if (liquidMobile && mlnToggle) {
+    const mlnItemEls = liquidMobile.querySelectorAll('.mln-item');
+    const syncTabbability = (isOpen) => {
+      mlnItemEls.forEach(el => {
+        if (isOpen) el.removeAttribute('tabindex');
+        else el.setAttribute('tabindex', '-1');
+      });
+    };
+    syncTabbability(false);
+
+    const closeLiquidMobile = () => {
+      liquidMobile.classList.remove('open');
+      mlnToggle.setAttribute('aria-expanded', 'false');
+      syncTabbability(false);
+    };
+
+    mlnToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isOpen = liquidMobile.classList.toggle('open');
+      mlnToggle.setAttribute('aria-expanded', String(isOpen));
+      syncTabbability(isOpen);
+    });
+
+    liquidMobile.querySelectorAll('.mln-item').forEach(item => {
+      item.addEventListener('click', closeLiquidMobile);
+    });
+
+    document.addEventListener('click', (e) => {
+      if (liquidMobile.classList.contains('open') && !liquidMobile.contains(e.target)) {
+        closeLiquidMobile();
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeLiquidMobile();
+    });
   }
 
   // ---------------------------------------------------------------
