@@ -17,20 +17,80 @@
   <header class="nav" id="nav">
     <div class="nav-inner">
       <a href="#top" class="logo">&gt;AK<span class="cursor">_</span></a>
-      <nav class="nav-links" id="navLinks">
-        <a href="#about">about</a>
-        <a href="#skills">skills</a>
-        <a href="#projects">projects</a>
-        <a href="#education">education</a>
-        <a href="#certifications">credentials</a>
-        <a href="#contact">contact</a>
-      </nav>
       <a href="#contact" class="btn btn-ghost nav-cta">say hi</a>
-      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
-        <span></span><span></span><span></span>
-      </button>
     </div>
   </header>
+
+  <!-- ============================================================
+       Liquid Navigation
+       — desktop: floating pill dock, bottom-center
+       — mobile: vertical bubble stack, expands from a side FAB
+       Clean, flat, professional icon buttons — the "liquid" feel
+       comes from smooth spring-eased motion (icons lift out of the
+       pill, bubbles pour out of the FAB), not from any blur/glow.
+  ============================================================= -->
+  <nav class="liquid-dock" id="liquidDock" aria-label="Primary">
+    <div class="dock-icons">
+      <a href="#top" class="dock-item" data-key="top" aria-label="Home">
+        <span class="dock-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11.5 12 4l8 7.5"/><path d="M6 10v9a1 1 0 0 0 1 1h4v-6h2v6h4a1 1 0 0 0 1-1v-9"/></svg></span>
+        <span class="dock-label mono">Home</span>
+      </a>
+      <a href="#about" class="dock-item" data-key="about" aria-label="About">
+        <span class="dock-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.6"/><path d="M5 20c0-3.9 3.1-7 7-7s7 3.1 7 7"/></svg></span>
+        <span class="dock-label mono">About</span>
+      </a>
+      <a href="#skills" class="dock-item" data-key="skills" aria-label="Skills">
+        <span class="dock-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3 8.5 4.5L12 12 3.5 7.5 12 3Z"/><path d="m3.5 12 8.5 4.5 8.5-4.5"/><path d="m3.5 16.5 8.5 4.5 8.5-4.5"/></svg></span>
+        <span class="dock-label mono">Skills</span>
+      </a>
+      <a href="#projects" class="dock-item" data-key="projects" aria-label="Projects">
+        <span class="dock-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6.5a1 1 0 0 1 1-1h4.2l1.6 2H19a1 1 0 0 1 1 1V18a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1z"/></svg></span>
+        <span class="dock-label mono">Projects</span>
+      </a>
+      <a href="#education" class="dock-item" data-key="education" aria-label="Education">
+        <span class="dock-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 9 12 4.5 21.5 9 12 13.5 2.5 9Z"/><path d="M7 11.3V16c0 1.4 2.2 2.6 5 2.6s5-1.2 5-2.6v-4.7"/><path d="M21.5 9v5.2"/></svg></span>
+        <span class="dock-label mono">Education</span>
+      </a>
+      <a href="#certifications" class="dock-item" data-key="certifications" aria-label="Credentials">
+        <span class="dock-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8.5" r="4.5"/><path d="m8.3 12.5-1.4 7.3 5.1-2.9 5.1 2.9-1.4-7.3"/></svg></span>
+        <span class="dock-label mono">Credentials</span>
+      </a>
+      <a href="#contact" class="dock-item" data-key="contact" aria-label="Contact">
+        <span class="dock-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5.5" width="18" height="13" rx="2"/><path d="m3.5 6.5 8.5 6.5 8.5-6.5"/></svg></span>
+        <span class="dock-label mono">Contact</span>
+      </a>
+    </div>
+  </nav>
+
+  <div class="liquid-mobile" id="liquidMobile">
+    <div class="mln-icons">
+      <button type="button" class="mln-toggle" id="mlnToggle" aria-label="Open navigation" aria-expanded="false" style="--n:0">
+        <span class="mln-icon mln-icon--dots"><svg viewBox="0 0 24 24"><circle cx="12" cy="5" r="1.7" fill="currentColor"/><circle cx="12" cy="12" r="1.7" fill="currentColor"/><circle cx="12" cy="19" r="1.7" fill="currentColor"/></svg></span>
+        <span class="mln-icon mln-icon--close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></span>
+      </button>
+      <a href="#top" class="mln-item" data-key="top" style="--n:1" aria-label="Home">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11.5 12 4l8 7.5"/><path d="M6 10v9a1 1 0 0 0 1 1h4v-6h2v6h4a1 1 0 0 0 1-1v-9"/></svg>
+      </a>
+      <a href="#about" class="mln-item" data-key="about" style="--n:2" aria-label="About">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.6"/><path d="M5 20c0-3.9 3.1-7 7-7s7 3.1 7 7"/></svg>
+      </a>
+      <a href="#skills" class="mln-item" data-key="skills" style="--n:3" aria-label="Skills">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3 8.5 4.5L12 12 3.5 7.5 12 3Z"/><path d="m3.5 12 8.5 4.5 8.5-4.5"/><path d="m3.5 16.5 8.5 4.5 8.5-4.5"/></svg>
+      </a>
+      <a href="#projects" class="mln-item" data-key="projects" style="--n:4" aria-label="Projects">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6.5a1 1 0 0 1 1-1h4.2l1.6 2H19a1 1 0 0 1 1 1V18a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1z"/></svg>
+      </a>
+      <a href="#education" class="mln-item" data-key="education" style="--n:5" aria-label="Education">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 9 12 4.5 21.5 9 12 13.5 2.5 9Z"/><path d="M7 11.3V16c0 1.4 2.2 2.6 5 2.6s5-1.2 5-2.6v-4.7"/><path d="M21.5 9v5.2"/></svg>
+      </a>
+      <a href="#certifications" class="mln-item" data-key="certifications" style="--n:6" aria-label="Credentials">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8.5" r="4.5"/><path d="m8.3 12.5-1.4 7.3 5.1-2.9 5.1 2.9-1.4-7.3"/></svg>
+      </a>
+      <a href="#contact" class="mln-item" data-key="contact" style="--n:7" aria-label="Contact">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5.5" width="18" height="13" rx="2"/><path d="m3.5 6.5 8.5 6.5 8.5-6.5"/></svg>
+      </a>
+    </div>
+  </div>
 
   <main>
     <section id="top" class="hero">
