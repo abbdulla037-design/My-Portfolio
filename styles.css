@@ -687,8 +687,8 @@ a { color: inherit; text-decoration: none; }
 .liquid-mobile {
   display: none;
   position: fixed;
-  right: 16px;
-  top: calc(50% - 50px);
+  left: 16px;
+  top: calc(50% - 65px);
   transform: translateY(-50%);
   z-index: 150;
 }
