@@ -72,6 +72,8 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 700; }
 a { color: inherit; text-decoration: none; }
 ::selection { background: var(--signal); color: #fff; }
 
+:focus-visible { outline: 2px solid var(--signal); outline-offset: 3px; border-radius: 4px; }
+
 .mono { font-family: var(--font-mono); }
 .accent-signal { color: var(--signal); }
 .arrow { transition: transform 0.25s var(--ease); display: inline-block; }
@@ -128,25 +130,9 @@ a { color: inherit; text-decoration: none; }
 .cursor { animation: blink 1s step-start infinite; }
 @keyframes blink { 50% { opacity: 0; } }
 
-.nav-links { display: flex; gap: 28px; font-family: var(--font-mono); font-size: 13px; color: var(--ink-mute); text-transform: lowercase; }
-.nav-links a { position: relative; padding: 4px 0; transition: color 0.25s var(--ease); }
-.nav-links a::after {
-  content: '';
-  position: absolute; left: 0; bottom: -2px;
-  width: 0%; height: 1px;
-  background: var(--grad-brand);
-  transition: width 0.3s var(--ease);
-}
-.nav-links a:hover { color: var(--ink); }
-.nav-links a:hover::after,
-.nav-links a.active::after { width: 100%; }
-.nav-links a.active { color: var(--signal); }
-
-.menu-toggle { display: none; flex-direction: column; gap: 4px; background: none; border: none; cursor: pointer; padding: 8px; }
-.menu-toggle span { width: 20px; height: 2px; background: var(--ink); transition: transform 0.3s var(--ease), opacity 0.3s var(--ease); }
-.nav.open .menu-toggle span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
-.nav.open .menu-toggle span:nth-child(2) { opacity: 0; }
-.nav.open .menu-toggle span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+/* Primary navigation now lives in the liquid dock / bubble stack
+   (see "Liquid Navigation" section below). The header keeps only
+   the logo + a contact CTA. */
 
 /* Buttons */
 .btn {
@@ -603,15 +589,162 @@ a { color: inherit; text-decoration: none; }
   .terminal-line { justify-content: center; width: 100%; }
 }
 @media (max-width: 860px) {
-  .nav-links { display: none; }
-  .nav.open .nav-links {
-    display: flex; flex-direction: column; position: absolute; top: 64px; left: 0; right: 0;
-    background: rgba(245, 246, 251, 0.98); backdrop-filter: blur(16px); padding: 20px 24px; gap: 18px;
-    border-bottom: 1px solid var(--line);
-  }
-  .nav-cta { display: none; }
-  .menu-toggle { display: flex; }
+  .nav-cta { padding: 8px 14px; font-size: 12px; }
   .section-grid { grid-template-columns: 1fr; gap: 16px; }
   .project-secondary-grid { grid-template-columns: 1fr; }
   .hero-ruler { display: none; }
+  .footer { padding-right: 78px; }
+}
+
+/* Keep page content clear of the fixed liquid nav elements */
+@media (min-width: 861px) {
+  .footer { padding-bottom: 118px; }
+}
+
+
+
+/* =================================================================
+   LIQUID NAVIGATION
+   Desktop: a floating pill dock, bottom-center — flat, dark, and
+   quiet at rest. On hover / focus, or when a section is active, the
+   icon lifts cleanly out of the pill onto a solid light disc; no
+   blur, no glow, just a crisp, professional micro-interaction.
+   Mobile: a round FAB pinned to the right edge. Tap it and six
+   plain, solid icon bubbles pour out in a smooth staggered cascade.
+================================================================== */
+
+/* ---------- Desktop dock ---------- */
+.liquid-dock {
+  position: fixed;
+  left: 50%;
+  bottom: 26px;
+  transform: translateX(-50%);
+  z-index: 150;
+}
+.dock-icons {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 8px;
+  background: var(--ink);
+  border-radius: 999px;
+  box-shadow: var(--shadow-lg), 0 0 0 1px rgba(255, 255, 255, 0.06) inset;
+}
+.dock-item {
+  flex: 0 0 44px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  color: var(--paper);
+  background: transparent;
+  -webkit-tap-highlight-color: transparent;
+  transition: transform 0.3s var(--ease), background 0.25s var(--ease), color 0.25s var(--ease), box-shadow 0.25s var(--ease);
+}
+.dock-icon {
+  width: 19px;
+  height: 19px;
+  display: flex;
+}
+.dock-icon svg { width: 100%; height: 100%; }
+.dock-label {
+  position: absolute;
+  bottom: -22px;
+  left: 50%;
+  transform: translate(-50%, 2px);
+  opacity: 0;
+  font-size: 9.5px;
+  letter-spacing: 0.05em;
+  color: var(--ink-soft);
+  white-space: nowrap;
+  pointer-events: none;
+  transition: opacity 0.2s var(--ease), transform 0.2s var(--ease);
+}
+.dock-item:hover,
+.dock-item:focus-visible,
+.dock-item.current {
+  transform: translateY(-14px);
+  background: var(--paper-raised);
+  color: var(--signal);
+  box-shadow: var(--shadow-md);
+}
+.dock-item.current { color: var(--teal); }
+.dock-item:hover .dock-label,
+.dock-item:focus-visible .dock-label,
+.dock-item.current .dock-label {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
+@media (max-width: 860px) {
+  .liquid-dock { display: none; }
+}
+
+/* ---------- Mobile bubble stack ---------- */
+.liquid-mobile {
+  display: none;
+  position: fixed;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 150;
+}
+@media (max-width: 860px) {
+  .liquid-mobile { display: block; }
+}
+.mln-icons {
+  position: relative;
+  width: 48px;
+  height: 48px;
+}
+.mln-toggle,
+.mln-item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--paper);
+  background: var(--ink);
+  border: none;
+  cursor: pointer;
+  box-shadow: var(--shadow-md);
+  -webkit-tap-highlight-color: transparent;
+  transition: transform 0.4s var(--ease), background 0.25s var(--ease), color 0.25s var(--ease);
+}
+.mln-toggle .mln-icon {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.2s var(--ease), transform 0.2s var(--ease);
+}
+.mln-toggle .mln-icon svg { width: 19px; height: 19px; }
+.mln-icon--close { opacity: 0; transform: rotate(-45deg); }
+.liquid-mobile.open .mln-icon--dots { opacity: 0; transform: rotate(45deg); }
+.liquid-mobile.open .mln-icon--close { opacity: 1; transform: rotate(0deg); }
+
+.mln-item {
+  transform: translateY(0) scale(0.001);
+  pointer-events: none;
+}
+.mln-item svg { width: 20px; height: 20px; }
+.liquid-mobile.open .mln-item {
+  transform: translateY(calc(var(--n) * 56px)) scale(1);
+  transition-delay: calc(var(--n) * 0.04s);
+  pointer-events: auto;
+}
+.mln-item.current,
+.mln-item:hover,
+.mln-item:focus-visible {
+  background: var(--paper-raised);
+  color: var(--signal);
 }
