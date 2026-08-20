@@ -74,6 +74,13 @@ a { color: inherit; text-decoration: none; }
 
 :focus-visible { outline: 2px solid var(--signal); outline-offset: 3px; border-radius: 4px; }
 
+/* Themed scrollbar (Chromium/WebKit + Firefox) */
+html { scrollbar-width: thin; scrollbar-color: var(--line-strong) transparent; }
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--line-strong); border-radius: 999px; border: 2px solid var(--paper); }
+::-webkit-scrollbar-thumb:hover { background: var(--signal); }
+
 .mono { font-family: var(--font-mono); }
 .accent-signal { color: var(--signal); }
 .arrow { transition: transform 0.25s var(--ease); display: inline-block; }
@@ -138,10 +145,11 @@ a { color: inherit; text-decoration: none; }
 .btn {
   position: relative; overflow: hidden;
   display: inline-flex; align-items: center; gap: 8px;
-  font-family: var(--font-mono); font-size: 13px; padding: 12px 24px;
-  border-radius: 8px; transition: transform 0.25s var(--ease), box-shadow 0.25s var(--ease); cursor: pointer;
+  font-family: var(--font-mono); font-size: 13px; padding: 13px 26px;
+  border-radius: 10px; transition: transform 0.25s var(--ease), box-shadow 0.25s var(--ease); cursor: pointer;
+  letter-spacing: 0.01em;
 }
-.btn-primary { background: var(--grad-brand); color: #fff; font-weight: 600; box-shadow: 0 6px 20px rgba(41, 81, 227, 0.28); }
+.btn-primary { background: var(--grad-brand); color: #fff; font-weight: 600; box-shadow: 0 6px 20px rgba(41, 81, 227, 0.28), 0 1px 0 rgba(255,255,255,0.2) inset; }
 .btn-primary::before {
   content: '';
   position: absolute; inset: 0;
@@ -410,7 +418,17 @@ a { color: inherit; text-decoration: none; }
   transition: border-color 0.3s var(--ease), transform 0.3s var(--ease), box-shadow 0.3s var(--ease);
 }
 .fact:hover { border-color: var(--signal-dim); transform: translateY(-3px); box-shadow: var(--shadow-md); }
-.fact-icon { font-size: 20px; }
+.fact-icon {
+  flex: 0 0 auto;
+  width: 38px; height: 38px;
+  display: flex; align-items: center; justify-content: center;
+  border-radius: 10px;
+  background: var(--signal-soft);
+  color: var(--signal);
+  transition: background 0.25s var(--ease), color 0.25s var(--ease);
+}
+.fact-icon svg { width: 19px; height: 19px; }
+.fact:hover .fact-icon { background: var(--grad-brand); color: #fff; }
 .fact-title { color: var(--ink); font-size: 14px; font-weight: 600; }
 .fact-sub { color: var(--ink-mute); font-size: 13px; margin-top: 2px; }
 
@@ -470,7 +488,7 @@ a { color: inherit; text-decoration: none; }
   display: flex; align-items: center; justify-content: center; z-index: 10;
   transition: all 0.25s var(--ease); user-select: none; backdrop-filter: blur(6px);
 }
-.carousel-btn:hover { border-color: var(--signal); color: var(--signal); box-shadow: 0 0 16px rgba(41, 81, 227, 0.25); }
+.carousel-btn:hover { border-color: transparent; background: var(--grad-brand); color: #fff; box-shadow: 0 6px 18px rgba(41, 81, 227, 0.35); transform: translateY(-50%) scale(1.06); }
 .btn-prev { left: 16px; }
 .btn-next { right: 16px; }
 .carousel-indicators { position: absolute; bottom: 16px; left: 50%; transform: translateX(-50%); display: flex; gap: 8px; z-index: 10; }
@@ -590,10 +608,12 @@ a { color: inherit; text-decoration: none; }
 }
 @media (max-width: 860px) {
   .nav-cta { padding: 8px 14px; font-size: 12px; }
+  .section { padding: 76px 20px; }
   .section-grid { grid-template-columns: 1fr; gap: 16px; }
   .project-secondary-grid { grid-template-columns: 1fr; }
   .hero-ruler { display: none; }
   .footer { padding-right: 78px; }
+  .hero { padding: 110px 20px 90px; }
 }
 
 /* Keep page content clear of the fixed liquid nav elements */
@@ -671,7 +691,7 @@ a { color: inherit; text-decoration: none; }
   color: var(--signal);
   box-shadow: var(--shadow-md);
 }
-.dock-item.current { color: var(--teal); }
+.dock-item.current { color: var(--teal); box-shadow: var(--shadow-md), 0 0 0 2px var(--teal-soft); }
 .dock-item:hover .dock-label,
 .dock-item:focus-visible .dock-label,
 .dock-item.current .dock-label {
@@ -717,7 +737,15 @@ a { color: inherit; text-decoration: none; }
   cursor: pointer;
   box-shadow: var(--shadow-md);
   -webkit-tap-highlight-color: transparent;
-  transition: transform 0.4s var(--ease), background 0.25s var(--ease), color 0.25s var(--ease);
+  transition: transform 0.4s var(--ease), background 0.25s var(--ease), color 0.25s var(--ease), box-shadow 0.3s var(--ease);
+}
+.mln-toggle {
+  background: var(--grad-brand);
+  box-shadow: 0 8px 22px rgba(41, 81, 227, 0.4), 0 0 0 1px rgba(255,255,255,0.14) inset;
+}
+.liquid-mobile.open .mln-toggle {
+  transform: rotate(90deg);
+  box-shadow: 0 8px 22px rgba(41, 81, 227, 0.4), 0 0 0 4px var(--signal-soft);
 }
 .mln-toggle .mln-icon {
   position: absolute;
