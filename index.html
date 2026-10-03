@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Abdullah Khan — AI Engineer</title>
-  <meta name="description" content="Portfolio of Abdullah Khan, BS Artificial Intelligence student at IST Islamabad." />
+  <meta name="description" content="Portfolio of Abdullah Khan, BS Artificial Intelligence student." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
@@ -12,260 +12,119 @@
 </head>
 <body>
 
+  <!-- Animated Liquid Orbs Background -->
+  <div class="background-orbs" aria-hidden="true">
+    <div class="orb orb-1" data-speed="0.2"></div>
+    <div class="orb orb-2" data-speed="-0.1"></div>
+    <div class="orb orb-3" data-speed="0.15"></div>
+    <div class="orb orb-4" data-speed="-0.2"></div>
+  </div>
+
   <div class="scroll-progress" id="scrollProgress"></div>
 
   <header class="nav" id="nav">
-    <div class="nav-inner">
+    <div class="nav-inner glass-card">
       <a href="#top" class="logo">&gt;AK<span class="cursor">_</span></a>
-      <a href="#contact" class="btn btn-ghost nav-cta">say hi</a>
+      <a href="tel:+923041988282" class="btn btn-ghost nav-cta magnetic tooltip-trigger">
+        Call Me
+        <span class="tooltip-box mono">+92 304 1988282</span>
+      </a>
     </div>
   </header>
 
-  <!-- ============================================================
-       Liquid Navigation
-       — desktop: floating pill dock, bottom-center
-       — mobile: vertical bubble stack, expands from a side FAB
-       Clean, flat, professional icon buttons — the "liquid" feel
-       comes from smooth spring-eased motion (icons lift out of the
-       pill, bubbles pour out of the FAB), not from any blur/glow.
-  ============================================================= -->
-  <nav class="liquid-dock" id="liquidDock" aria-label="Primary">
+  <nav class="liquid-dock glass-card" id="liquidDock" aria-label="Primary">
     <div class="dock-icons">
-      <a href="#top" class="dock-item" data-key="top" aria-label="Home">
-        <span class="dock-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11.5 12 4l8 7.5"/><path d="M6 10v9a1 1 0 0 0 1 1h4v-6h2v6h4a1 1 0 0 0 1-1v-9"/></svg></span>
-        <span class="dock-label mono">Home</span>
-      </a>
-      <a href="#about" class="dock-item" data-key="about" aria-label="About">
-        <span class="dock-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.6"/><path d="M5 20c0-3.9 3.1-7 7-7s7 3.1 7 7"/></svg></span>
-        <span class="dock-label mono">About</span>
-      </a>
-      <a href="#skills" class="dock-item" data-key="skills" aria-label="Skills">
-        <span class="dock-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3 8.5 4.5L12 12 3.5 7.5 12 3Z"/><path d="m3.5 12 8.5 4.5 8.5-4.5"/><path d="m3.5 16.5 8.5 4.5 8.5-4.5"/></svg></span>
-        <span class="dock-label mono">Skills</span>
-      </a>
-      <a href="#projects" class="dock-item" data-key="projects" aria-label="Projects">
-        <span class="dock-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6.5a1 1 0 0 1 1-1h4.2l1.6 2H19a1 1 0 0 1 1 1V18a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1z"/></svg></span>
-        <span class="dock-label mono">Projects</span>
-      </a>
-      <a href="#education" class="dock-item" data-key="education" aria-label="Education">
-        <span class="dock-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 9 12 4.5 21.5 9 12 13.5 2.5 9Z"/><path d="M7 11.3V16c0 1.4 2.2 2.6 5 2.6s5-1.2 5-2.6v-4.7"/><path d="M21.5 9v5.2"/></svg></span>
-        <span class="dock-label mono">Education</span>
-      </a>
-      <a href="#certifications" class="dock-item" data-key="certifications" aria-label="Credentials">
-        <span class="dock-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8.5" r="4.5"/><path d="m8.3 12.5-1.4 7.3 5.1-2.9 5.1 2.9-1.4-7.3"/></svg></span>
-        <span class="dock-label mono">Credentials</span>
-      </a>
-      <a href="#contact" class="dock-item" data-key="contact" aria-label="Contact">
-        <span class="dock-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5.5" width="18" height="13" rx="2"/><path d="m3.5 6.5 8.5 6.5 8.5-6.5"/></svg></span>
-        <span class="dock-label mono">Contact</span>
-      </a>
+      <a href="#top" class="dock-item" data-key="top">Home</a>
+      <a href="#about" class="dock-item" data-key="about">About</a>
+      <a href="#skills" class="dock-item" data-key="skills">Skills</a>
+      <a href="#projects" class="dock-item" data-key="projects">Projects</a>
+      <a href="#education" class="dock-item" data-key="education">Academics</a>
+      <a href="#certifications" class="dock-item" data-key="certifications">Certs</a>
+      <a href="#contact" class="dock-item" data-key="contact">Contact</a>
     </div>
   </nav>
 
-  <div class="liquid-mobile" id="liquidMobile">
-    <div class="mln-icons">
-      <button type="button" class="mln-toggle" id="mlnToggle" aria-label="Open navigation" aria-expanded="false" style="--n:0">
-        <span class="mln-icon mln-icon--dots"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg></span>
-        <span class="mln-icon mln-icon--close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12M18 6 6 18"/></svg></span>
-      </button>
-      <a href="#top" class="mln-item" data-key="top" style="--n:1" aria-label="Home">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11.5 12 4l8 7.5"/><path d="M6 10v9a1 1 0 0 0 1 1h4v-6h2v6h4a1 1 0 0 0 1-1v-9"/></svg>
-      </a>
-      <a href="#about" class="mln-item" data-key="about" style="--n:2" aria-label="About">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.6"/><path d="M5 20c0-3.9 3.1-7 7-7s7 3.1 7 7"/></svg>
-      </a>
-      <a href="#skills" class="mln-item" data-key="skills" style="--n:3" aria-label="Skills">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3 8.5 4.5L12 12 3.5 7.5 12 3Z"/><path d="m3.5 12 8.5 4.5 8.5-4.5"/><path d="m3.5 16.5 8.5 4.5 8.5-4.5"/></svg>
-      </a>
-      <a href="#projects" class="mln-item" data-key="projects" style="--n:4" aria-label="Projects">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6.5a1 1 0 0 1 1-1h4.2l1.6 2H19a1 1 0 0 1 1 1V18a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1z"/></svg>
-      </a>
-      <a href="#education" class="mln-item" data-key="education" style="--n:5" aria-label="Education">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 9 12 4.5 21.5 9 12 13.5 2.5 9Z"/><path d="M7 11.3V16c0 1.4 2.2 2.6 5 2.6s5-1.2 5-2.6v-4.7"/><path d="M21.5 9v5.2"/></svg>
-      </a>
-      <a href="#certifications" class="mln-item" data-key="certifications" style="--n:6" aria-label="Credentials">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8.5" r="4.5"/><path d="m8.3 12.5-1.4 7.3 5.1-2.9 5.1 2.9-1.4-7.3"/></svg>
-      </a>
-      <a href="#contact" class="mln-item" data-key="contact" style="--n:7" aria-label="Contact">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5.5" width="18" height="13" rx="2"/><path d="m3.5 6.5 8.5 6.5 8.5-6.5"/></svg>
-      </a>
-    </div>
-  </div>
-
   <main>
     <section id="top" class="hero">
-      <div class="hero-ruler" aria-hidden="true"></div>
-      <div class="hero-grid-bg" aria-hidden="true"></div>
       <div class="hero-inner">
-        <div class="hero-text" data-reveal="up">
-          <p class="mono terminal-line">// root@abdullah:~$ whoami</p>
-          <h1>Abdullah Khan</h1>
+        <div class="hero-text glass-card" data-reveal="up">
+          <span class="mono accent-tag pulse-glow">System Online</span>
+          <h1 class="fluid-title">Abdullah Khan</h1>
           <p class="hero-tagline">
             <span class="role-cycler mono" id="roleCycler">AI Engineer</span>
           </p>
           <p class="hero-desc">
-            BS Artificial Intelligence student at IST Islamabad, building full-stack architectures and relational database pipelines — from interactive web platforms to a complete ride-hailing startup app and a hostel management engine backed by real logic, not mockups.
+            BS Artificial Intelligence student at IST Islamabad, building full-stack architectures and relational database pipelines. I bridge the gap between raw data and fluid human interfaces.
           </p>
           <div class="hero-actions">
-            <a href="#projects" class="btn btn-primary">View Projects <span class="arrow">→</span></a>
-            <a href="https://github.com/abbdulla037-design" target="_blank" rel="noopener" class="btn btn-outline">GitHub Profile</a>
+            <a href="#projects" class="btn btn-primary magnetic">View Projects</a>
+            <a href="https://github.com/abbdulla037-design" target="_blank" class="btn btn-outline magnetic">GitHub</a>
+            <a href="tel:+923041988282" class="btn btn-outline magnetic tooltip-trigger">
+              Direct Line
+              <span class="tooltip-box mono">+92 304 1988282</span>
+            </a>
           </div>
         </div>
-        <div class="hero-image-container" data-reveal="scale">
-          <div class="profile-glow-effect"></div>
-          <div class="image-border-shield">
-            <span class="frame-tag mono">FIG. 00 / SUBJECT</span>
-            <div class="crosshair tl"></div>
-            <div class="crosshair br"></div>
+        <div class="hero-image-wrapper" data-reveal="scale">
+          <div class="profile-image-container glass-card">
             <img src="profile.jpg.jpeg" alt="Abdullah Khan" class="profile-photo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
             <div class="profile-fallback-avatar" style="display: none;"><span class="mono">&lt;AK /&gt;</span></div>
-          </div>
-
-          <div class="robot-mascot" id="robotMascot" tabindex="0" aria-label="AI assistant mascot">
-            <div class="robot-tooltip mono">system online<span class="robot-tooltip-caret"></span></div>
-            <div class="robot-badge-glow"></div>
-            <svg viewBox="0 0 100 100" width="108" height="108" class="robot-svg">
-              <defs>
-                <linearGradient id="botGrad" class="robot-grad-shift" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stop-color="#2951e3"/>
-                  <stop offset="50%" stop-color="#5a6ef0"/>
-                  <stop offset="100%" stop-color="#0e9c8c"/>
-                </linearGradient>
-                <linearGradient id="botGradSoft" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stop-color="#5a6ef0"/>
-                  <stop offset="100%" stop-color="#1fbcae"/>
-                </linearGradient>
-                <radialGradient id="botScreen" cx="50%" cy="38%" r="75%">
-                  <stop offset="0%" stop-color="#242f5c"/>
-                  <stop offset="100%" stop-color="#10152c"/>
-                </radialGradient>
-                <radialGradient id="badgeGrad" cx="50%" cy="42%" r="60%">
-                  <stop offset="0%" stop-color="#232d54"/>
-                  <stop offset="100%" stop-color="#10152c"/>
-                </radialGradient>
-              </defs>
-
-              <!-- badge plate -->
-              <circle cx="50" cy="52" r="46" fill="url(#badgeGrad)" stroke="url(#botGrad)" stroke-width="1.4" stroke-opacity="0.65"/>
-              <circle cx="50" cy="52" r="46" fill="none" stroke="url(#botGradSoft)" stroke-width="0.6" stroke-opacity="0.4" stroke-dasharray="2 4"/>
-
-              <!-- antenna -->
-              <line x1="50" y1="14" x2="50" y2="24" stroke="url(#botGrad)" stroke-width="2.5" stroke-linecap="round"/>
-              <circle class="robot-antenna-light" cx="50" cy="11.5" r="4.5" fill="url(#botGrad)"/>
-
-              <!-- back arm stub -->
-              <path d="M31 71 Q22 74 18 80" stroke="url(#botGrad)" stroke-width="4" stroke-linecap="round" fill="none" opacity="0.85"/>
-
-              <!-- rounded ears -->
-              <rect x="17" y="36" width="7" height="17" rx="3.5" fill="url(#botGrad)" opacity="0.9"/>
-              <rect x="76" y="36" width="7" height="17" rx="3.5" fill="url(#botGrad)" opacity="0.9"/>
-
-              <!-- head: softer, rounder silhouette -->
-              <path d="M25 40 Q25 21 50 21 Q75 21 75 40 L75 48 Q75 64 50 64 Q25 64 25 48 Z"
-                    fill="#161e3c" stroke="url(#botGrad)" stroke-width="2.2"/>
-
-              <!-- visor / screen -->
-              <path d="M32 38 Q32 30 50 30 Q68 30 68 38 L68 43 Q68 52 50 52 Q32 52 32 43 Z"
-                    fill="url(#botScreen)" stroke="url(#botGradSoft)" stroke-width="1" stroke-opacity="0.55"/>
-
-              <!-- expressive eyes -->
-              <g class="robot-eyes">
-                <rect x="39" y="38" width="6.5" height="8" rx="3.25" fill="url(#botGrad)"/>
-                <rect x="54.5" y="38" width="6.5" height="8" rx="3.25" fill="url(#botGrad)"/>
-              </g>
-              <!-- small smile -->
-              <path class="robot-smile" d="M43 47 Q50 51 57 47" stroke="url(#botGradSoft)" stroke-width="1.6" stroke-linecap="round" fill="none" opacity="0.85"/>
-
-              <!-- rounded body -->
-              <path d="M33 68 Q33 66 36 66 L64 66 Q67 66 67 68 L67 80 Q67 86 58 86 L42 86 Q33 86 33 80 Z"
-                    fill="#161e3c" stroke="url(#botGrad)" stroke-width="2.2"/>
-              <!-- glowing core, softly rounded diamond -->
-              <rect class="robot-core" x="45.5" y="71.5" width="9" height="9" rx="2.5" fill="url(#botGradSoft)" transform="rotate(45 50 76)"/>
-
-              <!-- waving arm -->
-              <g class="robot-arm">
-                <path d="M65 71 Q75 66 81 58" stroke="url(#botGrad)" stroke-width="4.2" stroke-linecap="round" fill="none"/>
-                <circle cx="81" cy="58" r="3" fill="url(#botGradSoft)"/>
-              </g>
-            </svg>
           </div>
         </div>
       </div>
     </section>
 
     <section id="about" class="section">
-      <div class="section-inner section-grid">
-        <div class="section-label-pane" data-reveal="left">
-          <span class="mono label-tag">PROFILE</span>
-          <span class="mono label-fig">FIG. 01</span>
-        </div>
-        <div class="section-content" data-reveal="up">
+      <div class="section-inner glass-card card-hover" data-reveal="up">
+        <div class="section-label-pane"><span class="mono label-tag">PROFILE</span></div>
+        <div class="section-content">
           <h2>Engineering Intent</h2>
           <p>
-            I'm a first-year AI student who learns computational engineering concepts by actively shipping functional products. That habit turned Database Systems coursework into an end-to-end hostel administration engine with automated triggers and custom stored procedures — and turned a class exercise into Rydee, a working ride-hailing platform.
+            I learn computational engineering concepts by actively shipping functional products. That habit turned Database Systems coursework into an end-to-end hostel administration engine with automated triggers — and a class exercise into a working ride-hailing platform.
           </p>
           <div class="about-facts">
-            <div class="fact" data-reveal="up">
-              <span class="fact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m2.5 9 9.5-4.5L21.5 9 12 13.5 2.5 9Z"/><path d="M7 11.3V16c0 1.4 2.2 2.6 5 2.6s5-1.2 5-2.6v-4.7"/><path d="M21.5 9v5.2"/></svg></span>
-              <div>
-                <p class="fact-title">BS Artificial Intelligence</p>
-                <p class="fact-sub">IST Islamabad · Expected 2029</p>
-              </div>
+            <div class="fact glass-subcard magnetic stagger-item">
+              <p class="fact-title">BS Artificial Intelligence</p>
+              <p class="fact-sub mono">IST Islamabad · Expected 2029</p>
             </div>
-            <div class="fact" data-reveal="up">
-              <span class="fact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21.5s7-6.1 7-11.7a7 7 0 1 0-14 0c0 5.6 7 11.7 7 11.7Z"/><circle cx="12" cy="9.6" r="2.5"/></svg></span>
-              <div>
-                <p class="fact-title">Location</p>
-                <p class="fact-sub">Islamabad / Rawalpindi, Pakistan</p>
-              </div>
+            <div class="fact glass-subcard magnetic stagger-item">
+              <p class="fact-title">Location</p>
+              <p class="fact-sub mono">Islamabad / Rawalpindi, Pakistan</p>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="skills" class="section section-alt">
-      <div class="section-inner section-grid">
-        <div class="section-label-pane" data-reveal="left">
-          <span class="mono label-tag">EXPERTISE</span>
-          <span class="mono label-fig">FIG. 02</span>
-        </div>
-        <div class="section-content" data-reveal="up">
+    <section id="skills" class="section">
+      <div class="section-inner glass-card card-hover" data-reveal="up">
+        <div class="section-label-pane"><span class="mono label-tag">EXPERTISE</span></div>
+        <div class="section-content">
           <h2>Technical Architecture</h2>
           <div class="skills-wrapper-grid">
             <div class="skills-metrics-column">
-              <p class="mono skill-label accent-signal">Core Languages &amp; Competency</p>
-
-              <div class="proficiency-unit">
-                <div class="proficiency-header"><span class="skill-name">C++</span><span class="skill-percent mono">90%</span></div>
-                <div class="progress-track"><div class="progress-fill" style="width: 90%"></div></div>
+              <div class="proficiency-unit stagger-item">
+                <div class="proficiency-header"><span class="skill-name">C++ & Python</span><span class="skill-percent mono">90%</span></div>
+                <div class="progress-track"><div class="progress-fill" data-target="90%"></div></div>
               </div>
-
-              <div class="proficiency-unit">
-                <div class="proficiency-header"><span class="skill-name">HTML5 &amp; CSS3</span><span class="skill-percent mono">90%</span></div>
-                <div class="progress-track"><div class="progress-fill" style="width: 90%"></div></div>
+              <div class="proficiency-unit stagger-item">
+                <div class="proficiency-header"><span class="skill-name">HTML5 & CSS3</span><span class="skill-percent mono">90%</span></div>
+                <div class="progress-track"><div class="progress-fill" data-target="90%"></div></div>
               </div>
-
-              <div class="proficiency-unit">
-                <div class="proficiency-header"><span class="skill-name">JavaScript</span><span class="skill-percent mono">65%</span></div>
-                <div class="progress-track"><div class="progress-fill" style="width: 65%"></div></div>
-              </div>
-
-              <div class="proficiency-unit">
+              <div class="proficiency-unit stagger-item">
                 <div class="proficiency-header"><span class="skill-name">SQL / Relational Queries</span><span class="skill-percent mono">90%</span></div>
-                <div class="progress-track"><div class="progress-fill" style="width: 90%"></div></div>
+                <div class="progress-track"><div class="progress-fill" data-target="90%"></div></div>
+              </div>
+              <div class="proficiency-unit stagger-item">
+                <div class="proficiency-header"><span class="skill-name">JavaScript</span><span class="skill-percent mono">65%</span></div>
+                <div class="progress-track"><div class="progress-fill" data-target="65%"></div></div>
               </div>
             </div>
-
-            <div class="frameworks-display-column">
-              <p class="mono skill-label accent-signal">Frameworks, IDEs &amp; Tools</p>
-              <div class="frameworks-token-grid">
-                <div class="token-card"><p class="token-title">GitHub &amp; Git</p><p class="token-desc">Version control systems</p></div>
-                <div class="token-card"><p class="token-title">Flutter</p><p class="token-desc">Cross-platform development</p></div>
-                <div class="token-card"><p class="token-title">SQL Server (MSSQL)</p><p class="token-desc">Enterprise database infrastructure</p></div>
-                <div class="token-card"><p class="token-title">SQL Server Management Studio (SSMS)</p><p class="token-desc">Query optimization &amp; management</p></div>
-                <div class="token-card"><p class="token-title">MongoDB</p><p class="token-desc">NoSQL document management</p></div>
-              </div>
+            <div class="frameworks-token-grid">
+              <div class="token-card glass-subcard magnetic stagger-item"><p class="token-title">Flutter</p><p class="token-desc">Cross-platform UI</p></div>
+              <div class="token-card glass-subcard magnetic stagger-item"><p class="token-title">Node.js / Express</p><p class="token-desc">Backend Logic</p></div>
+              <div class="token-card glass-subcard magnetic stagger-item"><p class="token-title">SQL Server / SSMS</p><p class="token-desc">Enterprise database infrastructure</p></div>
+              <div class="token-card glass-subcard magnetic stagger-item"><p class="token-title">MongoDB</p><p class="token-desc">NoSQL document management</p></div>
             </div>
           </div>
         </div>
@@ -273,148 +132,115 @@
     </section>
 
     <section id="projects" class="section">
-      <div class="section-inner section-grid">
-        <div class="section-label-pane" data-reveal="left">
-          <span class="mono label-tag">PORTFOLIO</span>
-          <span class="mono label-fig">FIG. 03</span>
-        </div>
-        <div class="section-content" data-reveal="up">
-          <h2>My Projects Gallery</h2>
+      <div class="section-inner">
+        <h2 class="section-header-floating" data-reveal="up">Deployed Systems</h2>
 
-          <article class="project-card project-flagship tilt" data-reveal="up">
-            <div class="carousel-container">
-              <div class="carousel-viewport">
-                <div class="carousel-slide"><img src="hmsimg1.png" alt="Hostel Management Screen Preview" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'800\' height=\'450\' style=\'fill:%23edf0f8\'><rect width=\'100%\' height=\'100%\'/><text x=\'50%\' y=\'50%\' font-family=\'sans-serif\' font-size=\'20\' fill=\'%238890AC\' text-anchor=\'middle\'>Hostel Engine — Admin Controls Snapshot Placeholder</text></svg>'"></div>
-                <div class="carousel-slide"><img src="hmsimg2.png" alt="SQL Database System Triggers Layout" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'800\' height=\'450\' style=\'fill:%23edf0f8\'><rect width=\'100%\' height=\'100%\'/><text x=\'50%\' y=\'50%\' font-family=\'sans-serif\' font-size=\'20\' fill=\'%238890AC\' text-anchor=\'middle\'>SSMS Query Execution &amp; Relational Schema View</text></svg>'"></div>
-                <div class="carousel-slide"><img src="hmsimg3.png" alt="SQL Database System Triggers Layout" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'800\' height=\'450\' style=\'fill:%23edf0f8\'><rect width=\'100%\' height=\'100%\'/><text x=\'50%\' y=\'50%\' font-family=\'sans-serif\' font-size=\'20\' fill=\'%238890AC\' text-anchor=\'middle\'>SSMS Query Execution &amp; Relational Schema View</text></svg>'"></div>
-                <div class="carousel-slide"><img src="hmsimg4.png" alt="Hostel Management System Additional View" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'800\' height=\'450\' style=\'fill:%23edf0f8\'><rect width=\'100%\' height=\'100%\'/><text x=\'50%\' y=\'50%\' font-family=\'sans-serif\' font-size=\'20\' fill=\'%238890AC\' text-anchor=\'middle\'>Hostel Engine — System View</text></svg>'"></div>
-              </div>
-              <button class="carousel-btn btn-prev" aria-label="Previous image">‹</button>
-              <button class="carousel-btn btn-next" aria-label="Next image">›</button>
-              <div class="carousel-indicators"></div>
+        <!-- Hostel Management -->
+        <article class="project-card glass-card card-hover float-anim" data-reveal="up">
+          <div class="carousel-container">
+            <div class="carousel-viewport">
+              <div class="carousel-slide"><img src="hmsimg1.png" alt="Hostel Management Screen Preview"></div>
+              <div class="carousel-slide"><img src="hmsimg2.png" alt="SQL Database System Triggers Layout"></div>
+              <div class="carousel-slide"><img src="hmsimg3.png" alt="SQL Relational Schema"></div>
+              <div class="carousel-slide"><img src="hmsimg4.png" alt="Hostel Management System View"></div>
             </div>
+            <button class="carousel-btn btn-prev" aria-label="Previous image">‹</button>
+            <button class="carousel-btn btn-next" aria-label="Next image">›</button>
+            <div class="carousel-indicators"></div>
+          </div>
+          <div class="project-body">
+            <span class="mono tag-flagship">FLAGSHIP ARCHITECTURE</span>
+            <h3>Smart Hostel Management System</h3>
+            <p class="project-desc">A full 3-tier database systems build: a Node.js/Express REST API talking directly to a SQL Server database, wrapped in a clean, interactive management console for admins.</p>
+            <div class="project-tags"><span>Node.js</span><span>Express</span><span>SQL Server</span><span>SSMS</span><span>Stored Procedures</span></div>
+            <a href="https://github.com/abbdulla037-design/hostel-management-system" target="_blank" class="link-arrow magnetic">Open Repository →</a>
+          </div>
+        </article>
 
+        <!-- Secondary Projects (Iframes) -->
+        <div class="project-secondary-grid">
+          <article class="project-card glass-card card-hover float-anim-alt" data-reveal="up">
+            <div class="iframe-wrap">
+              <iframe src="https://abbdulla037-design.github.io/Sizzle-Street/" title="Sizzle Street Live View" loading="lazy"></iframe>
+              <a class="iframe-overlay-link magnetic" href="https://abbdulla037-design.github.io/Sizzle-Street/" target="_blank">Live Site ↗</a>
+            </div>
             <div class="project-body">
-              <span class="mono tag-flagship">FLAGSHIP ARCHITECTURE</span>
-              <h3>Smart Hostel Management System</h3>
-              <p class="project-desc">
-                A full 3-tier database systems build: a Node.js/Express REST API talking directly to a SQL Server database, wrapped in a clean, interactive management console for admins.
-              </p>
-              <div class="project-tags"><span>Node.js</span><span>Express</span><span>SQL Server</span><span>SSMS</span><span>Stored Procedures</span></div>
-              <a href="https://github.com/abbdulla037-design/hostel-management-system" target="_blank" rel="noopener" class="link-arrow">Open Repository Workspace →</a>
+              <span class="mono tag-flagship">BRAND + WEB RUNTIME</span>
+              <h3>Sizzle Street</h3>
+              <p class="project-desc">A responsive food brand menu catalog built with semantic HTML and a fully custom fluid CSS layout.</p>
+              <div class="project-tags"><span>HTML5</span><span>CSS3 Grid</span></div>
+              <a href="https://github.com/abbdulla037-design/Sizzle-Street" target="_blank" class="link-arrow magnetic">Open Repository →</a>
             </div>
           </article>
 
-          <div class="project-secondary-grid">
-            <article class="project-card tilt" data-reveal="up">
-              <div class="iframe-wrap">
-                <iframe src="https://abbdulla037-design.github.io/Sizzle-Street/" title="Sizzle Street Live View" loading="lazy"></iframe>
-                <a class="iframe-overlay-link" href="https://abbdulla037-design.github.io/Sizzle-Street/" target="_blank" rel="noopener">Launch Live Site ↗</a>
-              </div>
-              <div class="project-body">
-                <span class="mono tag-flagship">BRAND + WEB RUNTIME</span>
-                <h3>Sizzle Street</h3>
-                <p class="project-desc">A responsive food brand menu catalog built with semantic HTML and a fully custom fluid CSS layout.</p>
-                <div class="project-tags"><span>HTML5</span><span>CSS3 Grid</span><span>Production Hosting</span></div>
-                <div class="project-links"><a href="https://github.com/abbdulla037-design/Sizzle-Street" target="_blank" rel="noopener">Repository Workspace</a></div>
-              </div>
-            </article>
+          <article class="project-card glass-card card-hover float-anim" data-reveal="up">
+            <div class="iframe-wrap">
+              <iframe src="https://abbdulla037-design.github.io/ICT-project/" title="ICT Project Live View" loading="lazy"></iframe>
+              <a class="iframe-overlay-link magnetic" href="https://abbdulla037-design.github.io/ICT-project/" target="_blank">Live Site ↗</a>
+            </div>
+            <div class="project-body">
+              <span class="mono tag-flagship">ACADEMIC INTERACTION HUB</span>
+              <h3>iPhone Comparison Hub</h3>
+              <p class="project-desc">An exploratory catalog tracking comparative metrics across smartphone hardware generations.</p>
+              <div class="project-tags"><span>Semantic HTML</span><span>CSS Selectors</span></div>
+              <a href="https://github.com/abbdulla037-design/ICT-project" target="_blank" class="link-arrow magnetic">Open Repository →</a>
+            </div>
+          </article>
+        </div>
 
-            <article class="project-card tilt" data-reveal="up">
-              <div class="iframe-wrap">
-                <iframe src="https://abbdulla037-design.github.io/ICT-project/" title="ICT Project Live View" loading="lazy"></iframe>
-                <a class="iframe-overlay-link" href="https://abbdulla037-design.github.io/ICT-project/" target="_blank" rel="noopener">Launch Live Site ↗</a>
-              </div>
-              <div class="project-body">
-                <span class="mono tag-flagship">ACADEMIC INTERACTION HUB</span>
-                <h3>iPhone Comparison Hub</h3>
-                <p class="project-desc">An exploratory catalog tracking comparative metrics across smartphone hardware generations, built for a collaborative lab.</p>
-                <div class="project-tags"><span>Semantic HTML</span><span>CSS Selectors</span><span>Shared Deployment</span></div>
-                <div class="project-links"><a href="https://github.com/abbdulla037-design/ICT-project" target="_blank" rel="noopener">Repository Workspace</a></div>
-              </div>
-            </article>
-
-          </div>
-
-          <article class="project-card project-flagship tilt" data-reveal="up" style="margin-top: 32px;">
-            <div class="phone-showcase-stage">
-              <span class="phone-showcase-tag mono">Live Preview · Mobile UI</span>
-              <div class="phone-frame">
-                <div class="phone-frame-notch"></div>
-                <span class="phone-frame-btn phone-frame-btn--silent"></span>
-                <span class="phone-frame-btn phone-frame-btn--vol-up"></span>
-                <span class="phone-frame-btn phone-frame-btn--vol-down"></span>
-                <span class="phone-frame-btn phone-frame-btn--power"></span>
-                <div class="phone-frame-screen">
-                  <div class="carousel-container carousel-container--phone">
-                    <div class="carousel-viewport">
-                      <div class="carousel-slide"><img src="https://github.com/user-attachments/assets/bd5b3204-4bcf-496c-9c7f-059d32c2b9ff" alt="Rydee App Screenshot 1" loading="lazy"></div>
-                      <div class="carousel-slide"><img src="https://github.com/user-attachments/assets/87f1d88e-2b9b-45aa-b943-a5963b15ac77" alt="Rydee App Screenshot 2" loading="lazy"></div>
-                      <div class="carousel-slide"><img src="https://github.com/user-attachments/assets/71d609a9-a320-4a3a-a10e-e83d2441657e" alt="Rydee App Screenshot 3" loading="lazy"></div>
-                      <div class="carousel-slide"><img src="https://github.com/user-attachments/assets/7f4a7859-7559-4409-ac4b-f13f35338180" alt="Rydee App Screenshot 4" loading="lazy"></div>
-                      <div class="carousel-slide"><img src="https://github.com/user-attachments/assets/4337ca3b-89f8-4d96-90ad-9e4e25403248" alt="Rydee App Screenshot 5" loading="lazy"></div>
-                      <div class="carousel-slide"><img src="https://github.com/user-attachments/assets/1a8575a4-479f-4dc5-97de-09393fcd3658" alt="Rydee App Screenshot 6" loading="lazy"></div>
-                      <div class="carousel-slide"><img src="https://github.com/user-attachments/assets/dd4e59d7-3ab2-4520-8ebe-088940634fcc" alt="Rydee App Screenshot 7" loading="lazy"></div>
-                      <div class="carousel-slide"><img src="https://github.com/user-attachments/assets/094e7244-d6bd-4540-aeca-e00b46a20485" alt="Rydee App Screenshot 8" loading="lazy"></div>
-                      <div class="carousel-slide"><img src="https://github.com/user-attachments/assets/a2a91986-9ff2-4ccd-a7cd-5cd6b81c1c8f" alt="Rydee App Screenshot 9" loading="lazy"></div>
-                      <div class="carousel-slide"><img src="https://github.com/user-attachments/assets/f09354e2-5545-4f4d-b57e-2774daa8ca7e" alt="Rydee App Screenshot 10" loading="lazy"></div>
-                      <div class="carousel-slide"><img src="https://github.com/user-attachments/assets/ff5a9d32-5d91-4f71-8c31-24a1821ffad1" alt="Rydee App Screenshot 11" loading="lazy"></div>
-                      <div class="carousel-slide"><img src="https://github.com/user-attachments/assets/317da9e8-ede2-41b7-86ea-6d5f09a6ff1e" alt="Rydee App Screenshot 12" loading="lazy"></div>
-                      <div class="carousel-slide"><img src="https://github.com/user-attachments/assets/e7441e63-3762-405b-83b0-f9cdfc3664c6" alt="Rydee App Screenshot 13" loading="lazy"></div>
-                      <div class="carousel-slide"><img src="https://github.com/user-attachments/assets/2bd7e12d-5f85-4089-9cf7-46291c33458c" alt="Rydee App Screenshot 14" loading="lazy"></div>
-                    </div>
-                    <button class="carousel-btn btn-prev" aria-label="Previous image">‹</button>
-                    <button class="carousel-btn btn-next" aria-label="Next image">›</button>
-                    <div class="carousel-indicators"></div>
+        <!-- Rydee Mobile App (With fixed navigation buttons) -->
+        <article class="project-card glass-card card-hover float-anim" data-reveal="up" style="margin-top: 60px;">
+          <div class="phone-showcase-stage">
+            <div class="phone-frame">
+              <div class="phone-frame-notch"></div>
+              <div class="phone-frame-screen">
+                <div class="carousel-container carousel-phone">
+                  <div class="carousel-viewport">
+                    <div class="carousel-slide"><img src="https://github.com/user-attachments/assets/bd5b3204-4bcf-496c-9c7f-059d32c2b9ff" alt="Rydee App Screenshot"></div>
+                    <div class="carousel-slide"><img src="https://github.com/user-attachments/assets/87f1d88e-2b9b-45aa-b943-a5963b15ac77" alt="Rydee App Screenshot"></div>
+                    <div class="carousel-slide"><img src="https://github.com/user-attachments/assets/71d609a9-a320-4a3a-a10e-e83d2441657e" alt="Rydee App Screenshot"></div>
+                    <div class="carousel-slide"><img src="https://github.com/user-attachments/assets/7f4a7859-7559-4409-ac4b-f13f35338180" alt="Rydee App Screenshot"></div>
+                    <div class="carousel-slide"><img src="https://github.com/user-attachments/assets/4337ca3b-89f8-4d96-90ad-9e4e25403248" alt="Rydee App Screenshot"></div>
                   </div>
+                  <!-- Phone navigation controls injected here -->
+                  <button class="carousel-btn btn-prev" aria-label="Previous image">‹</button>
+                  <button class="carousel-btn btn-next" aria-label="Next image">›</button>
+                  <div class="carousel-indicators"></div>
                 </div>
               </div>
             </div>
-
-            <div class="project-body">
-              <span class="mono tag-flagship">FULL-STACK MOBILE PLATFORM</span>
-              <h3>Rydee — Ride Hailing App</h3>
-              <p class="project-desc">
-                A full-stack ride-hailing app built for a small city that doesn't typically have ride-hailing coverage, designed to scale — inspired by InDrive, with live fare negotiation, real-time chat, and a driver wallet system with automated commission tracking.
-              </p>
-              <div class="project-tags"><span>Flutter</span><span>Node.js</span><span>Express</span><span>MongoDB</span><span>Socket.io</span><span>Firebase FCM</span><span>JWT</span></div>
-              <a href="https://github.com/abbdulla037-design/Rydee_App_Portfolio" target="_blank" rel="noopener" class="link-arrow">Open Repository Workspace →</a>
-              <span class="mono" style="color: var(--ink-mute); font-size: 12px; display: block; margin-top: 10px;">Source code private — contact for collaboration or licensing</span>
-            </div>
-          </article>
-        </div>
+          </div>
+          <div class="project-body">
+            <span class="mono tag-flagship">FULL-STACK MOBILE PLATFORM</span>
+            <h3>Rydee — Ride Hailing App</h3>
+            <p class="project-desc">A full-stack ride-hailing app built for a small city that doesn't typically have ride-hailing coverage. Designed to scale with live fare negotiation, real-time chat, and a driver wallet system tracking automated commissions.</p>
+            <div class="project-tags"><span>Flutter</span><span>Node.js</span><span>Express</span><span>MongoDB</span><span>Socket.io</span></div>
+            <a href="https://github.com/abbdulla037-design/Rydee_App_Portfolio" target="_blank" class="link-arrow magnetic">Open Repository →</a>
+          </div>
+        </article>
       </div>
     </section>
 
-    <section id="education" class="section section-alt">
-      <div class="section-inner section-grid">
-        <div class="section-label-pane" data-reveal="left">
-          <span class="mono label-tag">ACADEMICS</span>
-          <span class="mono label-fig">FIG. 04</span>
-        </div>
-        <div class="section-content" data-reveal="up">
+    <section id="education" class="section">
+      <div class="section-inner glass-card card-hover" data-reveal="up">
+        <div class="section-label-pane"><span class="mono label-tag">ACADEMICS</span></div>
+        <div class="section-content">
           <h2>Degree Engineering Milestone</h2>
-          <div class="education-timeline">
-            <div class="timeline-block" data-reveal="up">
-              <div class="timeline-dot"></div>
-              <div class="timeline-header">
-                <h3>BS Artificial Intelligence</h3>
-                <span class="timeline-date mono">Currently Enrolled · Sec. AI-02</span>
-              </div>
-              <p class="timeline-institution accent-signal">IST Islamabad</p>
-              <p class="timeline-text">
-                Focused on computation tracks, discrete algorithmic models, hardware architecture, and the logical frameworks that underpin backend processing systems.
-              </p>
-              <p class="mono course-list-label">Track Core Coursework Focus:</p>
-              <div class="coursework-badges">
-                <span>Programming Fundamentals</span>
-                <span>Object-Oriented Programming (OOP)</span>
-                <span>Database Systems (DBS)</span>
-                <span>Digital Logic Design (DLD)</span>
-                <span>ICT (Information &amp; Communication Tech)</span>
-                <span>Discrete Structures</span>
-                <span>Calculus &amp; Analytical Geometry</span>
-              </div>
+          <div class="timeline-block glass-subcard">
+            <div class="timeline-header">
+              <h3>BS Artificial Intelligence</h3>
+              <span class="timeline-date mono">IST Islamabad · Currently Enrolled</span>
+            </div>
+            <p class="timeline-text">Focused on computation tracks, discrete algorithmic models, hardware architecture, and backend logical frameworks.</p>
+            <p class="mono course-list-label">Track Core Coursework Focus:</p>
+            <div class="coursework-badges">
+              <span class="stagger-item">Programming Fundamentals</span>
+              <span class="stagger-item">Object-Oriented Programming (OOP)</span>
+              <span class="stagger-item">Database Systems (DBS)</span>
+              <span class="stagger-item">Digital Logic Design (DLD)</span>
+              <span class="stagger-item">ICT</span>
+              <span class="stagger-item">Discrete Structures</span>
+              <span class="stagger-item">Calculus & Analytical Geometry</span>
             </div>
           </div>
         </div>
@@ -422,50 +248,43 @@
     </section>
 
     <section id="certifications" class="section">
-      <div class="section-inner section-grid">
-        <div class="section-label-pane" data-reveal="left">
-          <span class="mono label-tag">CREDENTIALS</span>
-          <span class="mono label-fig">FIG. 05</span>
-        </div>
-        <div class="section-content" data-reveal="up">
-          <h2>Professional Credentials &amp; Certifications</h2>
-          <p class="section-subtitle-text">Industry authorizations, technical achievements, and extra milestones earned throughout my university timeline.</p>
-
+      <div class="section-inner glass-card card-hover" data-reveal="up">
+        <div class="section-label-pane"><span class="mono label-tag">CREDENTIALS</span></div>
+        <div class="section-content">
+          <h2>Professional Credentials & Certifications</h2>
+          <p style="margin-bottom: 24px; color: var(--text-soft);">Click on any certificate to view details in full resolution.</p>
           <div class="certifications-matrix-grid">
-
-            <div class="cert-card-premium" data-reveal="up">
+            
+            <div class="cert-card-premium glass-subcard magnetic stagger-item">
               <div class="cert-image-frame">
-                <img src="cert2.jpeg" alt="Technical Certification Achievement" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                <div class="cert-image-fallback mono">&lt; VERIFIED PATH /&gt;</div>
+                <img src="cert2.jpeg" alt="Technical Certification Achievement" onerror="this.style.display='none';">
               </div>
               <div class="cert-premium-body">
-                <h4>Certificate of Participation in Master Code Contest</h4>
-                <p class="cert-premium-issuer">Organized by Artificial Intelligence Community Pakistan</p>
-                <p class="cert-premium-meta mono">Issued: February 2026 · Registration ID: #250901007</p>
+                <h4>Master Code Contest Participation</h4>
+                <p class="cert-premium-issuer">Artificial Intelligence Community Pakistan</p>
+                <p class="cert-premium-meta mono">Registration ID: #250901007</p>
               </div>
             </div>
 
-            <div class="cert-card-premium" data-reveal="up">
+            <div class="cert-card-premium glass-subcard magnetic stagger-item">
               <div class="cert-image-frame">
-                <img src="certificate1.png" alt="Technical Certification Achievement" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                <div class="cert-image-fallback mono">&lt; VERIFIED PATH /&gt;</div>
+                <img src="certificate1.png" alt="Technical Certification Achievement" onerror="this.style.display='none';">
               </div>
               <div class="cert-premium-body">
-                <h4>Certificate of Thorough Introduction to Artificial Intelligence</h4>
+                <h4>Thorough Introduction to Artificial Intelligence</h4>
                 <p class="cert-premium-issuer">Simplilearn SkillUp Program</p>
                 <p class="cert-premium-meta mono">Issued: March 2026</p>
               </div>
             </div>
 
-            <div class="cert-card-premium" data-reveal="up">
+            <div class="cert-card-premium glass-subcard magnetic stagger-item">
               <div class="cert-image-frame">
-                <img src="hp-life-ai-certificate.jpeg" alt="HP LIFE AI for Beginners Certificate" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                <div class="cert-image-fallback mono">&lt; VERIFIED PATH /&gt;</div>
+                <img src="hp-life-ai-certificate.jpeg" alt="HP LIFE AI for Beginners Certificate" onerror="this.style.display='none';">
               </div>
               <div class="cert-premium-body">
                 <h4>AI for Beginners</h4>
                 <p class="cert-premium-issuer">HP LIFE — HP Foundation</p>
-                <p class="cert-premium-meta mono">Presented: July 2026 · Serial: a30b282a-c58a-4deb-8f64-f65e25052968</p>
+                <p class="cert-premium-meta mono">Serial: a30b282a-c58a-4deb-8f64-f65e25052968</p>
               </div>
             </div>
 
@@ -474,19 +293,20 @@
       </div>
     </section>
 
-    <section id="contact" class="section section-alt">
-      <div class="section-inner section-grid">
-        <div class="section-label-pane" data-reveal="left">
-          <span class="mono label-tag">CONNECT</span>
-          <span class="mono label-fig">FIG. 06</span>
-        </div>
-        <div class="section-content" data-reveal="up">
-          <h2>Available for Technical Internships</h2>
+    <section id="contact" class="section">
+      <div class="section-inner glass-card card-hover" data-reveal="up">
+        <div class="section-label-pane"><span class="mono label-tag">CONNECT</span></div>
+        <div class="section-content">
+          <h2>Available for Internships</h2>
           <p class="contact-desc">My workspace pipelines remain operational. Let's collaborate on data engineering or full-stack application development.</p>
-          <div class="hero-actions">
-            <a href="mailto:abbdulla038@gmail.com" class="btn btn-primary">Email Workspace</a>
-            <a href="https://github.com/abbdulla037-design" target="_blank" rel="noopener" class="btn btn-outline">GitHub Workspace</a>
-            <a href="https://www.linkedin.com/in/abdullah-khan-013862386/" target="_blank" rel="noopener" class="btn btn-outline">LinkedIn Connect</a>
+          <div class="hero-actions" style="margin-top: 24px;">
+            <a href="mailto:abbdulla038@gmail.com" class="btn btn-primary magnetic">Email Workspace</a>
+            <a href="https://github.com/abbdulla037-design" target="_blank" class="btn btn-outline magnetic">GitHub</a>
+            
+            <a href="tel:+923041988282" class="btn btn-outline magnetic tooltip-trigger">
+              Direct Line
+              <span class="tooltip-box mono">+92 304 1988282</span>
+            </a>
           </div>
         </div>
       </div>
@@ -494,11 +314,26 @@
   </main>
 
   <footer class="footer">
-    <div class="footer-inner mono">
-      <p>© 2026 Abdullah Khan. All engineering rights reserved.</p>
-      <p>System Engine Framework: Pure HTML, CSS &amp; JS Asset</p>
+    <div class="mono footer-text">
+      <p>© 2026 Abdullah Khan. Fluid Design Framework.</p>
     </div>
   </footer>
+
+  <!-- Certificate Lightbox Modal -->
+  <div class="cert-modal" id="certModal">
+    <div class="cert-modal-backdrop" id="certModalBackdrop"></div>
+    <div class="cert-modal-content glass-card">
+      <button class="cert-modal-close magnetic" id="certModalClose">&times;</button>
+      <div class="cert-modal-image">
+        <img id="certModalImg" src="" alt="Certificate Full View">
+      </div>
+      <div class="cert-modal-details">
+        <h3 id="certModalTitle"></h3>
+        <p id="certModalIssuer" class="cert-premium-issuer"></p>
+        <p id="certModalMeta" class="cert-premium-meta mono"></p>
+      </div>
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>
