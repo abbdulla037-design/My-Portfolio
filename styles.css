@@ -38,7 +38,7 @@ body { background-color: var(--bg-color); color: var(--text-dark); font-family: 
 .mono { font-family: var(--font-mono); }
 h1, h2, h3 { font-family: var(--font-display); font-weight: 700; color: var(--text-dark); letter-spacing: -0.5px; }
 a { color: inherit; text-decoration: none; }
-.fluid-title { font-size: clamp(2.5rem, 6vw, 5.5rem); line-height: 1.05; margin: 12px 0; background: linear-gradient(90deg, var(--text-dark), #1e293b); -webkit-background-clip: text; color: transparent; }
+.fluid-title { font-size: clamp(2.2rem, 9vw, 5.5rem); line-height: 1.1; margin: 12px 0; background: linear-gradient(90deg, var(--text-dark), #1e293b); -webkit-background-clip: text; color: transparent; word-wrap: break-word; }
 .accent-tag { font-size: 13px; color: var(--accent-primary); letter-spacing: 1px; text-transform: uppercase; font-weight: 600; display: inline-block; }
 .course-list-label { font-size: 12px; text-transform: uppercase; color: var(--text-soft); letter-spacing: 0.5px; margin: 16px 0 12px; }
 
@@ -46,7 +46,7 @@ a { color: inherit; text-decoration: none; }
 .pulse-glow { animation: pulseGlow 2.5s infinite; }
 @keyframes pulseGlow { 0% { text-shadow: 0 0 0 rgba(59, 130, 246, 0.4); } 50% { text-shadow: 0 0 12px rgba(59, 130, 246, 0.8); } 100% { text-shadow: 0 0 0 rgba(59, 130, 246, 0.4); } }
 
-.tooltip-trigger { position: relative; overflow: visible !important; display: inline-flex !important; }
+.tooltip-trigger { position: relative; overflow: visible !important; display: inline-flex !important; align-items: center; justify-content: center; }
 .tooltip-box {
   position: absolute; bottom: 120%; left: 50%; transform: translateX(-50%) scale(0.8);
   background: var(--text-dark); color: #fff; padding: 6px 14px; border-radius: 8px;
@@ -59,16 +59,13 @@ a { color: inherit; text-decoration: none; }
 }
 .tooltip-trigger:hover .tooltip-box { opacity: 1; transform: translateX(-50%) scale(1); }
 
-/* Frosted Glass Elements with Shimmer Animation */
-.glass-card { background: var(--glass-bg); backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px); border: 1px solid var(--glass-border); border-radius: 24px; box-shadow: var(--glass-shadow); position: relative; overflow: hidden; }
-.glass-card::before {
-  content: ''; position: absolute; top: 0; left: -100%; width: 50%; height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.6), transparent);
-  transform: skewX(-20deg); transition: all 0.7s var(--ease); pointer-events: none; z-index: 1;
+/* Frosted Glass Elements (Overflow hidden removed to fix clipping) */
+.glass-card { 
+  background: var(--glass-bg); backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px); 
+  border: 1px solid var(--glass-border); border-radius: 24px; box-shadow: var(--glass-shadow); 
+  position: relative; transition: transform 0.4s var(--ease), box-shadow 0.4s var(--ease), border-color 0.4s var(--ease);
 }
-.card-hover { transition: transform 0.4s var(--ease), box-shadow 0.4s var(--ease); }
-.card-hover:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08); }
-.card-hover:hover::before { left: 150%; }
+.card-hover:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08); border-color: #fff; }
 
 .glass-subcard { background: rgba(255, 255, 255, 0.4); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.6); border-radius: 16px; padding: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.02); }
 
@@ -90,17 +87,19 @@ a { color: inherit; text-decoration: none; }
 .nav { position: sticky; top: 20px; z-index: 100; margin: 0 24px; }
 .nav-inner { max-width: var(--max-width); margin: 0 auto; padding: 0 24px; height: 64px; display: flex; align-items: center; justify-content: space-between; border-radius: 32px; flex-wrap: nowrap; }
 .logo { font-family: var(--font-mono); font-size: 16px; font-weight: 700; z-index: 2; }
-.nav-cta { margin: 0; height: 40px; display: inline-flex; align-items: center; }
+.nav-cta { margin: 0; height: 40px; display: inline-flex; align-items: center; white-space: nowrap; }
 .cursor { animation: blink 1s step-start infinite; }
 @keyframes blink { 50% { opacity: 0; } }
-.liquid-dock { position: fixed; left: 50%; bottom: 30px; transform: translateX(-50%); z-index: 150; padding: 8px 16px; border-radius: 100px; display: flex; gap: 4px; }
-.dock-item { font-family: var(--font-display); font-size: 14px; font-weight: 600; padding: 10px 20px; border-radius: 100px; color: var(--text-soft); transition: all 0.3s; z-index: 2;}
+
+/* Fixes the PC dock wrapping issue strictly */
+.liquid-dock { position: fixed; left: 50%; bottom: 30px; transform: translateX(-50%); z-index: 150; padding: 8px 16px; border-radius: 100px; display: flex; gap: 4px; flex-wrap: nowrap; width: max-content; }
+.dock-item { font-family: var(--font-display); font-size: 14px; font-weight: 600; padding: 10px 20px; border-radius: 100px; color: var(--text-soft); transition: all 0.3s; z-index: 2; white-space: nowrap; }
 .dock-item.current, .dock-item:hover { color: #fff; background: var(--text-dark); box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
 
 /* Layout Grid */
 .section { padding: 40px 24px 80px; max-width: var(--max-width); margin: 0 auto; position: relative; }
 .section-inner { display: grid; gap: 32px; padding: 48px; position: relative; }
-.section-label-pane { position: absolute; top: -16px; left: 48px; background: var(--accent-primary); color: #fff; padding: 6px 16px; border-radius: 20px; font-size: 12px; font-weight: 700; letter-spacing: 1px; z-index: 2; }
+.section-label-pane { position: absolute; top: -16px; left: 48px; background: var(--accent-primary); color: #fff; padding: 6px 16px; border-radius: 20px; font-size: 12px; font-weight: 700; letter-spacing: 1px; z-index: 10; box-shadow: 0 4px 10px rgba(59, 130, 246, 0.3); }
 .section-content h2 { font-size: 2.2rem; margin-bottom: 24px; color: var(--text-dark); position: relative; z-index: 2; }
 .section-content p { font-size: 16px; color: var(--text-soft); max-width: 700px; position: relative; z-index: 2;}
 .section-header-floating { font-size: 3rem; text-align: center; margin-bottom: 40px; color: var(--text-dark); }
@@ -134,7 +133,7 @@ a { color: inherit; text-decoration: none; }
 .frameworks-token-grid { display: grid; gap: 16px; }
 
 /* Projects & Carousels */
-.project-card { margin-bottom: 60px; overflow: hidden; border-radius: 32px; display: grid; grid-template-columns: 1.2fr 1fr; align-items: center; padding: 20px; gap: 20px; z-index: 2; }
+.project-card { margin-bottom: 60px; border-radius: 32px; display: grid; grid-template-columns: 1.2fr 1fr; align-items: center; padding: 20px; gap: 20px; z-index: 2; }
 .carousel-container { position: relative; width: 100%; aspect-ratio: 4/3; background: #fff; overflow: hidden; border-radius: 20px; box-shadow: inset 0 0 20px rgba(0,0,0,0.05); }
 .carousel-viewport { display: flex; width: 100%; height: 100%; transition: transform 0.6s var(--ease); }
 .carousel-slide { min-width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; padding: 20px; }
@@ -226,13 +225,15 @@ a { color: inherit; text-decoration: none; }
 .in-view .stagger-item:nth-child(6) { transition-delay: 0.6s; }
 .in-view .stagger-item:nth-child(7) { transition-delay: 0.7s; }
 
-/* FIXING MOBILE LAYOUTS (Hero Overflows, Button Stacking) */
+/* FIXING MOBILE LAYOUTS (Hero Overflows, Button Stacking, Cutoff Labels) */
 @media (max-width: 968px) {
   .hero-inner { display: flex; flex-direction: column-reverse; gap: 32px; text-align: center; }
   .hero-text { align-items: center; padding: 32px 20px; }
-  .fluid-title { font-size: clamp(2.5rem, 8vw, 3.5rem); }
+  .fluid-title { font-size: clamp(2rem, 10vw, 3.2rem); margin-bottom: 8px; }
   .hero-actions { flex-direction: column; width: 100%; gap: 12px; }
-  .hero-actions .btn { width: 100%; display: flex; justify-content: center; }
+  .hero-actions .btn { width: 100%; display: flex; justify-content: center; white-space: nowrap; }
+  
+  .profile-image-container { width: clamp(200px, 60vw, 280px); height: clamp(200px, 60vw, 280px); }
   
   .project-card { grid-template-columns: 1fr; border-radius: 24px; padding: 16px; gap: 16px; }
   .project-secondary-grid { grid-template-columns: 1fr; }
@@ -241,7 +242,9 @@ a { color: inherit; text-decoration: none; }
   
   .nav-inner { padding: 0 16px; }
   .section-inner { padding: 40px 20px; }
-  .section-label-pane { left: 24px; top: -14px; }
+  
+  /* PERFECTLY POSITIONING SECTION LABELS ON MOBILE */
+  .section-label-pane { left: 24px; top: -16px; }
   
   .liquid-dock { display: none; }
   .cert-modal-image { height: 40vh; padding: 16px; }
