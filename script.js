@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }, { passive: true });
 
-  // 3. Magnetic Hover Buttons (Physics interaction)
+  // 3. Magnetic Hover Buttons
   const magneticEls = document.querySelectorAll('.magnetic');
   magneticEls.forEach(el => {
     el.addEventListener('mousemove', (e) => {
@@ -39,10 +39,9 @@ document.addEventListener('DOMContentLoaded', () => {
       if (entry.isIntersecting) {
         entry.target.classList.add('in-view');
         
-        // Trigger skill progress bars when section is viewed
         const bars = entry.target.querySelectorAll('.progress-fill');
         bars.forEach((bar, index) => {
-          setTimeout(() => { bar.style.width = bar.getAttribute('data-target'); }, 200 + (index * 100)); // staggered bar fill
+          setTimeout(() => { bar.style.width = bar.getAttribute('data-target'); }, 200 + (index * 100));
         });
         
         observer.unobserve(entry.target);
@@ -87,7 +86,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   if (roleCycler) setTimeout(tickRoles, 1600);
 
-  // 7. Carousel Logic (with Prev/Next Buttons)
+  // 7. Carousel Logic
   document.querySelectorAll('.carousel-container').forEach(container => {
     const viewport = container.querySelector('.carousel-viewport');
     const slides = container.querySelectorAll('.carousel-slide');
@@ -99,7 +98,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let currentIdx = 0;
 
-    // Generate Dot Indicators
     slides.forEach((_, i) => {
       const dot = document.createElement('div');
       dot.className = `indicator-dot ${i === 0 ? 'active' : ''}`;
@@ -115,15 +113,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const next = () => { currentIdx = (currentIdx + 1) % slides.length; update(); };
     const prev = () => { currentIdx = (currentIdx - 1 + slides.length) % slides.length; update(); };
 
-    // Attach button listeners if they exist
     if(nextBtn) nextBtn.addEventListener('click', next);
     if(prevBtn) prevBtn.addEventListener('click', prev);
     
-    // Auto slide every 4.5 seconds
     setInterval(next, 4500); 
   });
 
-  // 8. Certificate Lightbox Modal Logic
+  // 8. Certificate Lightbox Modal
   const certModal = document.getElementById('certModal');
   const certModalImg = document.getElementById('certModalImg');
   const certModalTitle = document.getElementById('certModalTitle');
